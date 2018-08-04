@@ -26,3 +26,6 @@ Code for the demos and labs for this workshop
    6. Ingress / Traffic Routing
 3. Pipelines
    1. Jenkins
+   2. Containers as a Build Artifact
+   3. Helm
+   4. Integration Testing Micro-Services
