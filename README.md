@@ -31,12 +31,18 @@ Code for the demos and labs for this workshop
       1. Hello-World
    4. Deploying Stateful Applications (w/ PVC)
       1. ELK Stack
-   5. Defining Services ( ClusterIP / NodePort / LoadBalancer )
+   5. System Services
+      1. Standard Kube-System Pods
+      2. Third Party Add-Ons (Datadog)
+      3. Developing from Scratch
    6. Ingress / Traffic Routing
-   7. Auto-Scaling
+      1. Defining Services ( ClusterIP / NodePort / LoadBalancer )
+      2. Ingress Controllers / Rules
+   7. Auto-Scaling / SRE
       1. Resources (Limits / Requests)
       2. Horizontal Pod Autoscaling
       3. Cluster Scaling
+      4. Liveness / Readiness Probes
 3. Pipelines
    1. Jenkins
    2. Containers as a Build Artifact / Promoting Builds
