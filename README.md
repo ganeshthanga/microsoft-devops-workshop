@@ -16,13 +16,14 @@ Code for the demos and labs for this workshop
    1. Overview / Moving Parts
       1. Networking (Flannel/Calico)
       2. DNS (Internal / External)
-      3. RBAC / Service Accounts
+      3. Primitives (Deployments / Services / Pods / etc)
+      4. RBAC / Service Accounts
    2. Environment Strategies (NonProd/Prod vs Dev/Test/Cert/Prod)
       1. Namespacing
       2. Service Discovery / KubeDNS
    3. Deploying Stateless Applications
    4. Deploying Stateful Applications (w/ PVC)
-   5. Defining Services
+   5. Defining Services ( ClusterIP / NodePort / LoadBalancer )
    6. Ingress / Traffic Routing
 3. Pipelines
    1. Jenkins
