@@ -24,7 +24,7 @@ Code for the demos and labs for this workshop
       5. DNS (Internal / External)
       6. Primitives (Deployments / Services / Pods / etc)
       7. RBAC / Service Accounts
-      8. Standing up for First Cluster
+      8. Standing up your First Cluster in AKS
    2. Environment Strategies (NonProd/Prod vs Dev/Test/Cert/Prod)
       1. Namespacing
       2. Service Discovery / KubeDNS
