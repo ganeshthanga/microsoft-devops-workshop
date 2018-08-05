@@ -37,7 +37,7 @@ Code for the demos and labs for this workshop
       3. Volume Types
    5. System Services
       1. Standard Kube-System Pods
-      2. Third Party Add-Ons (Datadog)
+      2. Third Party Add-Ons (Datadog, Helm)
       3. Developing from Scratch
    6. Ingress / Traffic Routing
       1. Defining Services ( ClusterIP / NodePort / LoadBalancer )
