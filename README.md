@@ -24,13 +24,17 @@ Code for the demos and labs for this workshop
       5. DNS (Internal / External)
       6. Primitives (Deployments / Services / Pods / etc)
       7. RBAC / Service Accounts
+      8. Standing up for First Cluster
    2. Environment Strategies (NonProd/Prod vs Dev/Test/Cert/Prod)
       1. Namespacing
       2. Service Discovery / KubeDNS
    3. Deploying Stateless Applications
       1. Hello-World
-   4. Deploying Stateful Applications (w/ PVC)
+      2. Config Maps / Secrets
+   4. Deploying Stateful Applications
       1. ELK Stack
+      2. PVC
+      3. Volume Types
    5. System Services
       1. Standard Kube-System Pods
       2. Third Party Add-Ons (Datadog)
