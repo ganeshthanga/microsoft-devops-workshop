@@ -1,5 +1,7 @@
-# microsoft-devops-workshop
+# Microsoft DevOps Workshop
 Code for the demos and labs for this workshop
+
+by Jerry Meisner and Christoph Champ for Redapt, Inc. (August 2018)
 
 # Table of Contents
 
