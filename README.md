@@ -10,9 +10,10 @@ Code for the demos and labs for this workshop
    1. Benefits of Containers
    2. Containerization
       1. Java [JVM Specifics]
-      2. Ruby
-      3. NodeJs
-      4. Python
+      2. .NET (Windows Base Containers)
+      3. Ruby
+      4. NodeJs
+      5. Python
    3. Configurability
    4. Security
 2. Kubernetes / AKS
