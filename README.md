@@ -27,25 +27,27 @@ by Jerry Meisner and Christoph Champ for Redapt, Inc. (August 2018)
       5. DNS (Internal / External)
       6. Primitives (Deployments / Services / Pods / etc)
       7. RBAC / Service Accounts
-      8. Standing up your First Cluster in AKS
    2. Environment Strategies (NonProd/Prod vs Dev/Test/Cert/Prod)
       1. Namespacing
       2. Service Discovery / KubeDNS
-   3. Deploying Stateless Applications
+   3. Standing up your First Cluster
+      1. MiniKube (Local)
+      2. AKS
+   4. Deploying Stateless Applications
       1. Hello-World
       2. Config Maps / Secrets
-   4. Deploying Stateful Applications
+   5. Deploying Stateful Applications
       1. ELK Stack
       2. PVC
       3. Volume Types
-   5. System Services
+   6. System Services
       1. Standard Kube-System Pods
       2. Third Party Add-Ons (Datadog, Helm)
       3. Developing from Scratch
-   6. Ingress / Traffic Routing
+   7. Ingress / Traffic Routing
       1. Defining Services ( ClusterIP / NodePort / LoadBalancer )
       2. Ingress Controllers / Rules
-   7. Auto-Scaling / SRE
+   8. Auto-Scaling / SRE
       1. Resources (Limits / Requests)
       2. Horizontal Pod Autoscaling
       3. Cluster Scaling
