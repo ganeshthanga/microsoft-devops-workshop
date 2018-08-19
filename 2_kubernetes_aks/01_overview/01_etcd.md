@@ -84,7 +84,7 @@ docker run -it -e ETCDCTL_API=3 tenstartups/etcdctl --endpoints=[http://${HostIP
 
 *In the Previous Terminal You will see the `put` Trigger an Event*
 
-**Output**
+*Output:*
 ```
 PUT
 /registry/services/specs/default/kubernetes2
