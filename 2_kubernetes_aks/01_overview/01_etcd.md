@@ -3,11 +3,142 @@ etcd is an open-source, distributed, key-value store, developed by CoreOS. etcd 
 
 ## Demo
 
+### etcd3
+The most recent version of etcd3 has been used by Kubernetes, since June 2016.
+
+`export HostIP=$(ipconfig getifaddr en0)`
+
+```
+docker run \
+  -d -p 2379:2379 -p 2380:2380 \
+  --volume=$(pwd)/data:/etcd-data \
+  --name etcd quay.io/coreos/etcd:latest \
+  /usr/local/bin/etcd \
+  --data-dir=/etcd-data --name node1 \
+  --initial-advertise-peer-urls http://${HostIP}:2380 --listen-peer-urls http://0.0.0.0:2380 \
+  --advertise-client-urls http://${HostIP}:2379 --listen-client-urls http://0.0.0.0:2379 \
+  --initial-cluster node1=http://${HostIP}:2380
+```
+
+Check the status of your etcd endpoint.
+
+`docker run -it -e ETCDCTL_API=3 tenstartups/etcdctl --endpoints=[http://${HostIP}:2379] endpoint health`
+
+`docker run -it -e ETCDCTL_API=3 tenstartups/etcdctl --endpoints=[http://${HostIP}:2379] put foo1 bar1`
+`docker run -it -e ETCDCTL_API=3 tenstartups/etcdctl --endpoints=[http://${HostIP}:2379] put foo2 bar2`
+`docker run -it -e ETCDCTL_API=3 tenstartups/etcdctl --endpoints=[http://${HostIP}:2379] put foo3 bar3`
+`docker run -it -e ETCDCTL_API=3 tenstartups/etcdctl --endpoints=[http://${HostIP}:2379] get --prefix --limit=2 foo --print-value-only`
+`docker run -it -e ETCDCTL_API=3 tenstartups/etcdctl --endpoints=[http://${HostIP}:2379] get foo1 --print-value-only`
+
+Kubernetes would us a more path based storage, since you can watch the parent for new child objects.
+
+```
+docker run -it -e ETCDCTL_API=3 tenstartups/etcdctl --endpoints=[http://${HostIP}:2379] put /registry/services/specs/default/kubernetes '{ 
+    "apiVersion": "v1",
+    "kind": "Service",
+    "metadata": {
+        "labels": {
+            "component": "apiserver",
+            "provider": "kubernetes"
+        },
+        "name": "kubernetes",
+        "namespace": "default"
+    }
+}'
+```
+
+`docker run -it -e ETCDCTL_API=3 tenstartups/etcdctl --endpoints=[http://${HostIP}:2379] get /registry/services/specs/default/kubernetes --print-value-only`
+
+`docker run -it -e ETCDCTL_API=3 tenstartups/etcdctl --endpoints=[http://${HostIP}:2379] watch --prefix /registry/services/specs/default`
+
+*In Another Terminal*
+`docker run -it -e ETCDCTL_API=3 tenstartups/etcdctl --endpoints=[http://${HostIP}:2379] put /registry/services/specs/default/kubernetes2 '{ 
+    "apiVersion": "v1",
+    "kind": "Service",
+    "metadata": {
+        "labels": {
+            "component": "apiserver",
+            "provider": "kubernetes2"
+        },
+        "name": "kubernetes2",
+        "namespace": "default"
+    }
+}'`
+
+*In the Previous Terminal You will see the `put` Trigger an Event*
+```
+PUT
+/registry/services/specs/default/kubernetes2
+{ 
+    "apiVersion": "v1",
+    "kind": "Service",
+    "metadata": {
+        "labels": {
+            "component": "apiserver",
+            "provider": "kubernetes2"
+        },
+        "name": "kubernetes2",
+        "namespace": "default"
+    }
+}
+```
+
+It's worth mentioning that etcd also support time based leases, and keeps track of revisions. To avoid revisions piling up, Kubernetes compacts/removes these at a regular interval.
+
+#### Back-Up
+```
+docker run -it --volume=$(pwd)/backup-data:/backup-data \
+  -e ETCDCTL_API=3 tenstartups/etcdctl \
+  --endpoints=[http://${HostIP}:2379] \
+  snapshot save /backup-data/snapshot.db
+```
+
+#### Restore
+First, to experiment with restore, you will want to destroy everything except our back-up data.
+```
+docker kill etcd
+docker rm etcd
+rm -Rf $(pwd)/data
+```
+
+```
+docker run -it --volume=$(pwd)/data:/etcd-data \
+  --volume=$(pwd)/backup-data:/backup-data \
+  -e ETCDCTL_API=3 --entrypoint /bin/sh tenstartups/etcdctl -c "etcdctl \
+  --endpoints=[http://${HostIP}:2379] \
+  snapshot restore /backup-data/snapshot.db --name node1 \
+  --initial-advertise-peer-urls http://${HostIP}:2380 \
+  --initial-cluster node1=http://${HostIP}:2380 && mv /node1.etcd/* /etcd-data"
+```
+
+Note that the previous command, created a snap directory for the cluster to start from in the data directory. Bring up a fresh instance of etcd with that data directory's contents.
+
+```
+docker run \
+  -d -p 2379:2379 -p 2380:2380 \
+  --volume=$(pwd)/data:/etcd-data \
+  --name etcd quay.io/coreos/etcd:latest \
+  /usr/local/bin/etcd \
+  --data-dir=/etcd-data --name node1 \
+  --initial-advertise-peer-urls http://${HostIP}:2380 --listen-peer-urls http://0.0.0.0:2380 \
+  --advertise-client-urls http://${HostIP}:2379 --listen-client-urls http://0.0.0.0:2379 \
+  --initial-cluster node1=http://${HostIP}:2380
+```
+
+`docker run -it -e ETCDCTL_API=3 tenstartups/etcdctl --endpoints=[http://${HostIP}:2379] get /registry/services/specs/default/kubernetes --print-value-only`
+
+#### Authentication
+etcd authenticates via certificate, both to add/remove data and for members joining the cluster. 
+
+Generating Self-Signed Certs for etcd is outside the scope of this workshop, but the general premise is here, for setting up authentication backed etcd cluster.
+https://github.com/coreos/etcd/tree/master/hack/tls-setup
+
 ### etcd2
+Older deployments of Kubernetes may still use etcd2, and its important to know that breaking changes were made between version 2 and 3. There are viable upgrade paths for users that want to preserve cluster data, from legacy clusters, pre-etcd3. 
 
-You will need to set the `HostIP` environment var, prior to running the following commands, in a bash context.
+You will need to set the `HostIP` environment var, if not already set, prior to running the following commands, in a bash context. You should also run the steps for clean up, before bring up this version of etcd, in the same local environment.
 
-`export HostIP=10.0.0.63`
+`export HostIP=$(ipconfig getifaddr en0)`
 
 ```
 docker run -v $(pwd)/data:/var/lib/etcd2 -d -p 4001:4001 -p 2380:2380 -p 2379:2379 \
@@ -25,38 +156,12 @@ docker run -v $(pwd)/data:/var/lib/etcd2 -d -p 4001:4001 -p 2380:2380 -p 2379:23
 
 `docker run -it tenstartups/etcdctl -C http://${HostIP}:2379 member list` <We use bash and start an interactive session.>
 
-#### Clean Up
+### Clean Up
 
 ```
 docker kill etcd
 docker rm etcd
-rm -Rf $(pwd)/data/*
-```
-
-### etcd3
-
-`export HostIP=10.0.0.63`
-
-```
-docker run \
-  -d -p 2379:2379 -p 2380:2380 \
-  --volume=$(pwd)/data:/etcd-data \
-  --name etcd quay.io/coreos/etcd:latest \
-  /usr/local/bin/etcd \
-  --data-dir=/etcd-data --name node1 \
-  --initial-advertise-peer-urls http://${HostIP}:2380 --listen-peer-urls http://0.0.0.0:2380 \
-  --advertise-client-urls http://${HostIP}:2379 --listen-client-urls http://0.0.0.0:2379 \
-  --initial-cluster node1=http://${HostIP}:2380
-```
-
-`docker run -it -e ETCDCTL_API=3 tenstartups/etcdctl --endpoints=[http://${HostIP}:2379] endpoint health`
-
-#### Clean Up
-
-```
-docker kill etcd
-docker rm etcd
-rm -Rf $(pwd)/data/*
+rm -Rf $(pwd)/data
 ```
 
 ## Additional Information
