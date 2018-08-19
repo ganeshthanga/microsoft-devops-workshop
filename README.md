@@ -21,8 +21,8 @@ by Jerry Meisner and Christoph Champ for Redapt, Inc. (August 2018)
 2. Kubernetes / AKS
    1. Overview / Moving Parts
       1. ETCD
-      2. Kubelet
-      3. Kubernetes API
+      2. Kubernetes API
+      3. Controller Manager / Scheduler / Kubelet / Proxy
       4. Networking (Flannel/Calico)
       5. DNS (Internal / External)
       6. Primitives (Deployments / Services / Pods / etc)
