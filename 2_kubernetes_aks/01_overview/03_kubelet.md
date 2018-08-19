@@ -1,0 +1,10 @@
+# Kubelet
+
+K8s Documentation: https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet/
+
+The Kubelet is the Kubernetes cluster agent. It heart beats an http request to the API to confirm its membership, and the controllers tell it what work to schedule on it's host. It also acts as a proxy to the Kubernetes API, which running pods can utilize, via "Service Accounts" to take action with the API directly. 
+
+This service would share the hosts docker daemon, such that it can schedule and run containers, even if it's running in a container, on that host itself. 
+
+The most common operations that a user might encounter with the kubelet, is the need to restart it, under certain conditions. Generally, issues wherein a single node becomes "Not Ready" for extended periods of time, or if a node disappears from the node list altogether, warrant a kubelet restart.
+

@@ -1,7 +1,13 @@
 # etcd
 etcd is an open-source, distributed, key-value store, developed by CoreOS. etcd gracefully handles leader elections during network partitions and will tolerate machine failure, including the leader. These values can be watched, allowing your app to reconfigure itself when they change. This makes it a great solution for a system like Kubernetes, where things are event-driven by desired state, defined by submitting yaml/json objects to etcd.
 
+It has a raft storage mechanism, running fewer nodes gives better performance, but sacrifices HA. You should aim to use the least ammount of nodes, with a minimum of 3 **OR** 5. The OR is important, because running 4 nodes, gives you very little advantage over running 3, in both cases, you can only tolerate 1 node failure. In order to achieve a two node failure tolerance, at least 5 nodes are necessary, and so on focusing on maintaing a "Quorum" or majority.
+
+<Insert ETCD Quorum Visual Aid>
+
 ## Demo
+
+**Note:** This is part of the Kubernetes "Control Plane" that is abstracted from the end-user for most managed platforms, such as AKS. This quick demonstration serves to help you understand the components, and the primary DevOps tasks associated.
 
 ### etcd3
 The most recent version of etcd3 has been used by Kubernetes, since June 2016.
@@ -66,7 +72,7 @@ docker run -it -e ETCDCTL_API=3 tenstartups/etcdctl --endpoints=[http://${HostIP
   --prefix /registry/services/specs/default
 ```
 
-*In Another Terminal*
+*In Another Terminal, with `HostIP` properly set.*
 ```
 docker run -it -e ETCDCTL_API=3 tenstartups/etcdctl --endpoints=[http://${HostIP}:2379] put /registry/services/specs/default/kubernetes2 '{ 
     "apiVersion": "v1",
