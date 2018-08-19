@@ -27,8 +27,16 @@ Check the status of your etcd endpoint.
 `docker run -it -e ETCDCTL_API=3 tenstartups/etcdctl --endpoints=[http://${HostIP}:2379] put foo1 bar1`
 `docker run -it -e ETCDCTL_API=3 tenstartups/etcdctl --endpoints=[http://${HostIP}:2379] put foo2 bar2`
 `docker run -it -e ETCDCTL_API=3 tenstartups/etcdctl --endpoints=[http://${HostIP}:2379] put foo3 bar3`
-`docker run -it -e ETCDCTL_API=3 tenstartups/etcdctl --endpoints=[http://${HostIP}:2379] get --prefix --limit=2 foo --print-value-only`
-`docker run -it -e ETCDCTL_API=3 tenstartups/etcdctl --endpoints=[http://${HostIP}:2379] get foo1 --print-value-only`
+
+```
+docker run -it -e ETCDCTL_API=3 tenstartups/etcdctl --endpoints=[http://${HostIP}:2379] get \
+  --prefix --limit=2 foo --print-value-only
+```
+
+```
+docker run -it -e ETCDCTL_API=3 tenstartups/etcdctl --endpoints=[http://${HostIP}:2379] get foo1 \
+  --print-value-only
+```
 
 Kubernetes would us a more path based storage, since you can watch the parent for new child objects.
 
@@ -47,12 +55,20 @@ docker run -it -e ETCDCTL_API=3 tenstartups/etcdctl --endpoints=[http://${HostIP
 }'
 ```
 
-`docker run -it -e ETCDCTL_API=3 tenstartups/etcdctl --endpoints=[http://${HostIP}:2379] get /registry/services/specs/default/kubernetes --print-value-only`
+```
+docker run -it -e ETCDCTL_API=3 tenstartups/etcdctl --endpoints=[http://${HostIP}:2379] \
+  get /registry/services/specs/default/kubernetes \
+  --print-value-only
+```
 
-`docker run -it -e ETCDCTL_API=3 tenstartups/etcdctl --endpoints=[http://${HostIP}:2379] watch --prefix /registry/services/specs/default`
+```
+docker run -it -e ETCDCTL_API=3 tenstartups/etcdctl --endpoints=[http://${HostIP}:2379] watch \
+  --prefix /registry/services/specs/default
+```
 
 *In Another Terminal*
-`docker run -it -e ETCDCTL_API=3 tenstartups/etcdctl --endpoints=[http://${HostIP}:2379] put /registry/services/specs/default/kubernetes2 '{ 
+```
+docker run -it -e ETCDCTL_API=3 tenstartups/etcdctl --endpoints=[http://${HostIP}:2379] put /registry/services/specs/default/kubernetes2 '{ 
     "apiVersion": "v1",
     "kind": "Service",
     "metadata": {
@@ -63,9 +79,11 @@ docker run -it -e ETCDCTL_API=3 tenstartups/etcdctl --endpoints=[http://${HostIP
         "name": "kubernetes2",
         "namespace": "default"
     }
-}'`
+}'
+```
 
 *In the Previous Terminal You will see the `put` Trigger an Event*
+**Output**
 ```
 PUT
 /registry/services/specs/default/kubernetes2
@@ -125,7 +143,11 @@ docker run \
   --initial-cluster node1=http://${HostIP}:2380
 ```
 
-`docker run -it -e ETCDCTL_API=3 tenstartups/etcdctl --endpoints=[http://${HostIP}:2379] get /registry/services/specs/default/kubernetes --print-value-only`
+```
+docker run -it -e ETCDCTL_API=3 tenstartups/etcdctl --endpoints=[http://${HostIP}:2379] \
+  get /registry/services/specs/default/kubernetes \
+  --print-value-only
+```
 
 #### Authentication
 etcd authenticates via certificate, both to add/remove data and for members joining the cluster. 
