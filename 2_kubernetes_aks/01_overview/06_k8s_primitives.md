@@ -1,8 +1,8 @@
 # Kubernetes Primitives
 
-If the previous pieces were the brain and nervous system, the primitives would be the language you use to communicate desired state. 
+If the previous pieces were the brain and nervous system, the primitives would be the language you use to communicate desired state. These are also referred to as Kubernetes "Objects" or "API Primitives"
 
-**Note:** Not every object or primitive is listed here, those that are included were picked as being the most useful to daily and weekly operations of an app team using K8s. These are also referred to as Kubernetes "Objects" or "API Primitives"
+**Note:** Not every object or primitive is listed here, those that are included were picked as being the most useful to daily and weekly operations of an app team using K8s.
 
 #### Cluster
 A cluster is a set of machines (physical or virtual) on which your applications are managed and run. All machines are managed as a cluster (or set of clusters, depending on the topology used).
