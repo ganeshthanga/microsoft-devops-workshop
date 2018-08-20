@@ -94,12 +94,45 @@ roleRef:
 ```
 
 #### ServiceAccount
-Service accounts can replace "User" in the `subjects` section of each role binding. These are also defined as yaml, and are generally used to allow pods to make API calls, from wtihin the cluster. For instance, the ingress controller add-ons mentioned in the previous section, use serviceAccounts to fetch pod ip addresses, and the cluster-autoscaler add-on uses the api to read and respond to "Unschedulable" events.
+Service accounts can replace "User" in the `subjects` section of each role binding. These are also defined as yaml, and are generally used to allow pods to make API calls, from wtihin the cluster. For instance, the ingress controller add-ons mentioned in the previous section, use serviceAccounts to fetch pod ip addresses, and the cluster-autoscaler add-on uses the api to read and respond to "Unschedulable" events. There is also a specialized Jenkins container designed to run on Kubernetes, which utlilizes the API to spin up each worker as a pod of containers, at the time a job is scheduled.
 
 ```
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: build-deployment-robot
-automountServiceAccountToken: false
+  name: jenkins
+```
+
+For example, to assign a service account to a role, you might do something similar to the following.
+```
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  name: jenkins
+rules:
+- apiGroups: [""]
+  resources: ["pods"]
+  verbs: ["create","delete","get","list","patch","update","watch"]
+- apiGroups: [""]
+  resources: ["pods/exec"]
+  verbs: ["create","delete","get","list","patch","update","watch"]
+- apiGroups: [""]
+  resources: ["pods/log"]
+  verbs: ["get","list","watch"]
+- apiGroups: [""]
+  resources: ["secrets"]
+  verbs: ["get"]
+```
+```
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: RoleBinding
+metadata:
+  name: jenkins
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: jenkins
+subjects:
+- kind: ServiceAccount
+  name: jenkins
 ```
