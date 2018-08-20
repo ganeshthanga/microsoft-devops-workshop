@@ -1,6 +1,6 @@
 # Kubernetes Primitives
 
-If the previous pieces were the brain and nervous system, the primitives would be the language you use to communicate desired state. These are also referred to as Kubernetes "Objects" or "API Primitives"
+If the previous pieces were the brain and nervous system, the primitives would be the language you use to communicate desired state. These are also referred to as Kubernetes "Objects" or "API Primitives". Generally, these are defined as yaml or json and can be put onto the cluster with `create` or `apply` kubectl operations.
 
 **Note:** Not every object or primitive is listed here, those that are included were picked as being the most useful to daily and weekly operations of an app team using K8s.
 

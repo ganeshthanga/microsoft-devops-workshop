@@ -31,7 +31,7 @@ The `ui` endpoint, is a special designation, that gets used later when the clust
 
 ### kubectl
 
-We can use the `kubectl` tool to interact with the Kubernetes API server. Normally, you would run `kubectl` locally, and configure the client to connect to the cluster, but for our demonstration purposes, we can exec into the container, and use its local unauthenticated access.
+We can use the `kubectl` tool to interact with the Kubernetes API server. Normally, you would run `kubectl` locally, and configure the client to connect to the cluster, but for our demonstration purposes, we can exec into the container, and use its local unauthenticated access. We can exec in and check the current set of Namespaces, one of the Kubernetes primitives, that acts as a logical grouping.
 
 `docker exec -it k8s-api bash`
 
