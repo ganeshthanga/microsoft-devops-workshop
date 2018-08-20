@@ -11,6 +11,9 @@ A cluster is a set of machines (physical or virtual) on which your applications 
 You can think of these as "container clients". These are the individual hosts (physical or virtual) that Docker is installed on and hosts the various containers within your managed cluster.
 Each node will run etcd (a key-pair management and communication service, used by Kubernetes for exchanging messages and reporting on cluster status) as well as the Kubernetes Proxy.
 
+#### Namespace 
+A Namespace provides additional qualification to a resource name. This is especially helpful when multiple teams/projects are using the same cluster and there is a potential for name collision. You can think of a Namespace as a virtual wall between environments, RBAC resources use namespaces to provide scoped permissions.
+
 #### Pods 
 A pod consists of one or more containers. Those containers are guaranteed (by the cluster controller) to be located on the same host machine (aka "co-located") in order to facilitate sharing of resources. For an example, it makes sense to have database processes and data containers as close as possible. In fact, they really should be in the same pod.
 Pods "work together", as in a multi-tiered application configuration. Each set of pods that define and implement a service (e.g., MySQL or Apache) are defined by the label selector (see below).
@@ -72,12 +75,11 @@ It's a common pattern to expose an add-on Ingress Controller via a specific Node
 #### Ingress
 The ingress resource does not do much without one of the optional ingress controllers deployed. The ingress resource is the set of rules which define hostname to service name maps, so that all your cluster traffic can flow through the same external ip, and get routed appropriately. You also have options to perform TLS termination using Kubernetes Secrets.
 
-## Secrets
+#### Configmaps
+These resources are created to define key-value pairs that can be referenced by pods at run-time. Typically values in a configmap are safe to store in SCM, and are more like settings and configuration than credentials, for those things consider Secrets. 
 
-## Configmaps
+#### Secrets
+Secrets can be populated outside of deployment ipelines for sensitive information. Similar to Configmaps, these can then be referenced to inject Environment variables or files into pods running on Kubernetes. By default, the values in the secret are base64 encoded. There are cluster add-ons/deployments, when can be used to encrypt and decrypt secrets, using a shared certificate.
 
 #### Volumes 
-A Volume is a directory with data, which is accessible to a container. The volume co-terminates with the Pods that encloses it.
-
-#### Namespace 
-A Namespace provides additional qualification to a resource name. This is especially helpful when multiple teams/projects are using the same cluster and there is a potential for name collision. You can think of a Namespace as a virtual wall between multiple clusters.
+A Volume is a directory with data, which is accessible to a container. The volume co-terminates with the Pods that encloses it. Volumes can also be defined from Secrets or Configmaps, wherein the keys become filenames, and the values become contents. There are many types of Volumes, and we'll touch on a few in our deployment demos.
