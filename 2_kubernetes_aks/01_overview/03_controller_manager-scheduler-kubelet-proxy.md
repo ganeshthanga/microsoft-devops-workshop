@@ -4,7 +4,7 @@ K8s Documentation: https://kubernetes.io/docs/reference/command-line-tools-refer
 
 **Note:** This is part of the Kubernetes "Control Plane" that is abstracted from the end-user for most managed platforms, such as AKS. This quick demonstration serves to help you understand the components, and the primary DevOps tasks associated.
 
-
+The controller manager is a daemon that runs the main control loops within Kubernetes. Kubernetes uses control loops to regulate desired state vs current state. In a sense, these loops are always driving to the desired state. There are several controllers that are native to Kubernetes, such as: Replication, Namespace, Endpoints, and ServiceAccounts Controllers. It's common for Kubernetes users to define their own controllers, that can utilize custom metadata to perform action within and outside of the cluster.
 
 # Kubernetes Scheduler
 
@@ -12,7 +12,7 @@ K8s Documentation: https://kubernetes.io/docs/reference/command-line-tools-refer
 
 K8s Documentation: https://kubernetes.io/docs/reference/command-line-tools-reference/kube-scheduler/
 
-
+The scheduler can be considered the nervous system of Kubernetes. It is responsible for scheduling workload according to policies defined with variable topology, affinity, performance, capacity, and more. These policies are defined and stored with the same logic that runs the containers, and can be managed via SCM very easily.
 
 # Kubelet
 
@@ -28,3 +28,7 @@ The most common operations that a user might encounter with the kubelet, is the 
 # Kube Proxy
 
 K8s Documentation: https://kubernetes.io/docs/reference/command-line-tools-reference/kube-proxy/
+
+The Kubernetes network proxy runs on each node. This reflects workloads on each node and can do simple stream forwarding or round robin forwarding across a set of backends. There is an optional addon that provides cluster DNS for these cluster IPs. The user must create a service with the apiserver API to configure the proxy.
+
+In the networking section, the role of the proxy will become more clear.
