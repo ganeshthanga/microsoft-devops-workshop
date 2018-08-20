@@ -94,7 +94,7 @@ roleRef:
 ```
 
 #### ServiceAccount
-Service accounts can replace "User" in the `subjects` section of each role binding. These are also defined as yaml, and are generally used to allow pods to make API calls, from wtihin the cluster.
+Service accounts can replace "User" in the `subjects` section of each role binding. These are also defined as yaml, and are generally used to allow pods to make API calls, from wtihin the cluster. For instance, the ingress controller add-ons mentioned in the previous section, use serviceAccounts to fetch pod ip addresses, and the cluster-autoscaler add-on uses the api to read and respond to "Unschedulable" events.
 
 ```
 apiVersion: v1
