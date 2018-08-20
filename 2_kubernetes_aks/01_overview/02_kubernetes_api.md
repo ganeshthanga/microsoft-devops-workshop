@@ -59,7 +59,7 @@ When scripting kubectl interactions, there are some useful global flags such as 
 
 -------- End of Container Context
 
-To observe that state is stored in etc, you can stop and replace your api container.
+To observe that state is stored in etcd, you can stop and replace your api container.
 
 ```
 docker stop k8s-api
