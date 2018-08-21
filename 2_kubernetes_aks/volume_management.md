@@ -4,13 +4,13 @@ On-disk files in a container are ephemeral, which presents some problems for non
 
 In Kubernetes, a Volume is attached to a Pod and shared among the containers of that Pod. The Volume has the same life span as the Pod, and it outlives the containers of the Pod &mdash; this allows data to be preserved across container restarts.
 
-Kubernetes resolves the problem of persistent storage with the Persistent Volume subsystem, which provides APIs for users and administrators to manage and consume storage. To manage the Volume, it uses the PersistentVolume (PV) API resource type, and to consume it, it uses the PersistentVolumeClaim (PVC) API resource type.
+Kubernetes resolves the problem of persistent storage with the Persistent Volume subsystem, which provides APIs for users and administrators to manage and consume storage. To manage the Volume, it uses the [PersistentVolume](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistent-volumes) (PV) API resource type, and to consume it, it uses the [PersistentVolumeClaim](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims) (PVC) API resource type.
 
 <dl>
-  <dt>[PersistentVolume](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistent-volumes) (PV)</dt>
+  <dt>Persistent Volume (PV)</dt>
   <dd>a piece of storage in the cluster that has been provisioned by an administrator. It is a resource in the cluster just like a node is a cluster resource. PVs are volume plugins like Volumes, but have a lifecycle independent of any individual pod that uses the PV. This API object captures the details of the implementation of the storage, be that NFS, iSCSI, or a cloud-provider-specific storage system.</dd>
 
-  <dt>[PersistentVolumeClaim](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims) (PVC)</dt>
+  <dt>Persistent Volume Claim (PVC)</dt>
   <dd>a request for storage by a user. It is similar to a pod. Pods consume node resources and PVCs consume PV resources. Pods can request specific levels of resources (CPU and Memory). Persistent Volume Claims can request specific size and access modes (e.g., can be mounted once read/write or many times read-only).</dd>
 </dl>
 
