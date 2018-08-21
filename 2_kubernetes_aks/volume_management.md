@@ -1,6 +1,6 @@
 # Volume management
 
-On-disk files in a container are ephemeral, which presents some problems for non-trivial applications when running in containers. First, when a container crashes, kubelet will restart it, but the files will be lost (i.e., the container starts with a clean state). Second, when running containers together in a Pod it is often necessary to share files between those containers. The Kubernetes ''[https://kubernetes.io/docs/concepts/storage/volumes/ Volumes]'' abstraction solves both of these problems. A Volume is essentially a directory backed by a storage medium. The storage medium and its content are determined by the Volume Type.
+On-disk files in a container are ephemeral, which presents some problems for non-trivial applications when running in containers. First, when a container crashes, kubelet will restart it, but the files will be lost (i.e., the container starts with a clean state). Second, when running containers together in a Pod it is often necessary to share files between those containers. The Kubernetes ''[Volumes](https://kubernetes.io/docs/concepts/storage/volumes/)'' abstraction solves both of these problems. A Volume is essentially a directory backed by a storage medium. The storage medium and its content are determined by the Volume Type.
 
 In Kubernetes, a Volume is attached to a Pod and shared among the containers of that Pod. The Volume has the same life span as the Pod, and it outlives the containers of the Pod &mdash; this allows data to be preserved across container restarts.
 
@@ -10,7 +10,7 @@ Kubernetes resolves the problem of persistent storage with the Persistent Volume
   <dt>[PersistentVolume](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistent-volumes) (PV)</dt>
   <dd>a piece of storage in the cluster that has been provisioned by an administrator. It is a resource in the cluster just like a node is a cluster resource. PVs are volume plugins like Volumes, but have a lifecycle independent of any individual pod that uses the PV. This API object captures the details of the implementation of the storage, be that NFS, iSCSI, or a cloud-provider-specific storage system.</dd>
 
-  <dt>[PersistentVolumeClaim](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims] (PVC)</dt>
+  <dt>[PersistentVolumeClaim](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims) (PVC)</dt>
   <dd>a request for storage by a user. It is similar to a pod. Pods consume node resources and PVCs consume PV resources. Pods can request specific levels of resources (CPU and Memory). Persistent Volume Claims can request specific size and access modes (e.g., can be mounted once read/write or many times read-only).</dd>
 </dl>
 
@@ -18,7 +18,7 @@ A Persistent Volume is a network-attached storage in the cluster, which is provi
 
 Persistent Volumes can be provisioned statically by the administrator, or dynamically, based on the StorageClass resource. A StorageClass contains pre-defined provisioners and parameters to create a Persistent Volume.
 
-A PersistentVolumeClaim (PVC) is a request for storage by a user. Users request Persistent Volume resources based on size, access modes, etc. Once a suitable Persistent Volume is found, it is bound to a Persistent Volume Claim. After a successful bind, the Persistent Volume Claim resource can be used in a Pod. Once a user finishes its work, the attached Persistent Volumes can be released. The underlying Persistent Volumes can then be reclaimed and recycled for future usage. See [https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims Persistent Volumes] for details.
+A PersistentVolumeClaim (PVC) is a request for storage by a user. Users request Persistent Volume resources based on size, access modes, etc. Once a suitable Persistent Volume is found, it is bound to a Persistent Volume Claim. After a successful bind, the Persistent Volume Claim resource can be used in a Pod. Once a user finishes its work, the attached Persistent Volumes can be released. The underlying Persistent Volumes can then be reclaimed and recycled for future usage. See [Persistent Volumes](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims) for details.
 
 * Access Modes
   * Each of the following access modes ''must'' be supported by storage resource provider (e.g., NFS, AWS EBS, etc.) if they are to be used.
