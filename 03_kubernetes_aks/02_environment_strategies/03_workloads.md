@@ -20,7 +20,7 @@ If the container exceeds the limits, it will be automatically restarted by Kuber
 
 - Consider If the nodes were double that, 8 cpu and 32 Gb of memory, we could maintain the request, and schedule an additional 2-3 cpu job(s) onto the node, leaving each instance more room to expand vertically if necessary. If 6/8 cpus were requested, and no other workloads were scheduled, each individual instance could vertically scale to use the additional 2 cores and extra memory, of course not at the same time.
 
-While these smaller sizes may be ok for development (orders of half cpus and mb of ram), its still worth considering how your workloads will consume the resources your cluster is managing.
+While these smaller sizes may be ok for development (orders of half cpus and mb of ram), its still worth considering how your workloads will consume the resources your cluster is managing. We will discuss this further in later sections around scaling and site reliability engineering.
 
 #### Scheduling
 When you first start populating workloads its important to make use of labels via `nodeSelector` and `affinity`, even if you only have one node pool, since you may want to expand without having existing workloads scheduled onto the newer node pool. It may not be easy to update every pod/deployment missing these scheduling conditions. We will discuss this in more detail, when we stand up a cluster and start deploying services, in the next sections.
