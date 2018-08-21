@@ -1,4 +1,6 @@
-# Kubernetes DNS
+# Service Discovery
+
+#### Kubernetes DNS
 
 There is a Kubernetes DNS pod and service that is pre-defined on the cluster, if enabled during instantiation. Every Service defined in the cluster (including the DNS server itself) is assigned a DNS name. By default, a client Pod’s DNS search list will include the Pod’s own namespace and the cluster’s default domain.
 

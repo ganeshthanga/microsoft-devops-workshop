@@ -24,12 +24,12 @@ by Jerry Meisner and Christoph Champ for Redapt, Inc. (August 2018)
       2. Kubernetes API
       3. Controller Manager / Scheduler / Kubelet / Proxy
       4. Networking (Flannel/Calico)
-      5. DNS (Internal / External)
-      6. Primitives (Deployments / Services / Pods / etc)
-      7. RBAC / Service Accounts
+      5. Primitives (Deployments / Services / Pods / etc)
+      6. RBAC / Service Accounts
    2. Environment Strategies (NonProd/Prod vs Dev/Test/Cert/Prod)
       1. Namespacing
       2. Service Discovery / KubeDNS
+      3. Workloads
    3. Standing up your First Cluster
       1. MiniKube (Local)
       2. AKS

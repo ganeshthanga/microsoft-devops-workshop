@@ -8,6 +8,5 @@
 2. Kubernetes API
 3. Controller Manager / Scheduler / Kubelet / Proxy
 4. Networking (Flannel/Calico)
-5. DNS (Internal / External)
-6. Primitives (Deployments / Services / Pods / etc)
-7. RBAC / Service Accounts
+5. Primitives (Deployments / Services / Pods / etc)
+6. RBAC / Service Accounts

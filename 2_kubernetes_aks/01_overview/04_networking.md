@@ -9,7 +9,7 @@ Up to this point, we have referred to containers, but Kubernetes encapsulates on
 Kubernetes approaches networking somewhat differently than Docker does by default. There are 4 distinct networking problems to solve:
 
 1. Highly-coupled container-to-container communications: Inter-Pod Traffic / Localhost.
-2. Pod-to-Pod communications: seperate pods clustering directly with eachother.
+2. Pod-to-Pod communications
 3. Pod-to-Service communications: pods using a load balancer or "Service" to reach other pods.
 4. External-to-Service communications: clusters using NodePorts via "Service" to route traffic to pods.
 
