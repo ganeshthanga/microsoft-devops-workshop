@@ -5,7 +5,7 @@ by Jerry Meisner and Christoph Champ for Redapt, Inc. (August 2018)
 
 ## Table of Contents
 
-1. [Introduction](01_inroduction)
+1. [Introduction](01_introduction)
 1. [Docker](02_docker)
    1. Benefits of Containers
    2. Containerization
