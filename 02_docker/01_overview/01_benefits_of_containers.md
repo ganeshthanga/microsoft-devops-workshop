@@ -41,9 +41,11 @@ The Docker software as a service offering consists of three components:
 
   <dt>Objects</dt>
   <dd>Docker objects refer to different entities used to assemble an application in Docker. The main Docker objects are images, containers, and services.
-    * A Docker container is a standardized, encapsulated environment that runs applications. A container is managed using the Docker API or CLI.
-    * A Docker image is a read-only template used to build containers. Images are used to store and ship applications.
-    * A Docker service allows containers to be scaled across multiple Docker daemons. The result is known as a "swarm", cooperating daemons that communicate through the Docker API.
+  <ul>
+    <li>A Docker container is a standardized, encapsulated environment that runs applications. A container is managed using the Docker API or CLI.</li>
+    <li>A Docker image is a read-only template used to build containers. Images are used to store and ship applications.</li>
+    <li>A Docker service allows containers to be scaled across multiple Docker daemons. The result is known as a "swarm", cooperating daemons that communicate through the Docker API.</li>
+  </ul>
   </dd>
 
   <dt>Registries</dt>
@@ -51,5 +53,7 @@ The Docker software as a service offering consists of three components:
 </dl>
 
 <center>
+| Navigation                   |
+|:-----------------------------|
 | << previous | Home | next >> |
 </center>
