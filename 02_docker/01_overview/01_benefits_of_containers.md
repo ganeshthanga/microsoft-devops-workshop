@@ -52,12 +52,13 @@ The Docker software as a service offering consists of three components:
   <dd>A Docker registry is a repository for Docker images. Docker clients connect to registries to download ("pull") images for use or upload ("push") images that they have built. Registries can be public or private. Two main public registries are Docker Hub and Docker Cloud. Docker Hub is the default registry where Docker looks for images.</dd>
 </dl>
 
+<hr>
 <center>
-<table>
+<table align="center">
   <tr>
-    <th>&#171; previous</th>
-    <th>Home</th>
-    <th>next &#187;</th>
+    <th>[&#171; previous](README.md)</th>
+    <th>[Home](README.md)</th>
+    <th>[next &#187;](02_docker_commands.md)</th>
   </tr>
 </table>
 </center>
