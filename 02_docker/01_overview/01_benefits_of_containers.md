@@ -37,7 +37,7 @@ The Docker software as a service offering consists of three components:
 
 <dl>
   <dt>Software</dt>
-  <dd>The Docker daemon, called `dockerd` is a persistent process that manages Docker containers and handles container objects. The daemon listens for API requests sent by the Docker Engine API. The Docker client, which identifies itself as `docker`, allows users to interact with Docker through CLI. It uses the Docker REST API to communicate with one or more Docker daemons.</dd>
+  <dd>The Docker daemon, called <code>dockerd</code> is a persistent process that manages Docker containers and handles container objects. The daemon listens for API requests sent by the Docker Engine API. The Docker client, which identifies itself as <code>docker</code>, allows users to interact with Docker through CLI. It uses the Docker REST API to communicate with one or more Docker daemons.</dd>
 
   <dt>Objects</dt>
   <dd>Docker objects refer to different entities used to assemble an application in Docker. The main Docker objects are images, containers, and services.
