@@ -1,6 +1,6 @@
 # Benefits of Containers
 
-*Note: The following is loosly based on content found on the official [Docker website](https://www.docker.com/what-container Docker website), [Wikipedia](https://en.wikipedia.org/wiki/Docker_(software)), and various other locations.*
+*Note: The following is loosly based on content found on the official [Docker website](https://www.docker.com/what-container), [Wikipedia](https://en.wikipedia.org/wiki/Docker_(software)), and various other locations.*
 
 A container image is a lightweight, stand-alone, executable package of a piece of software that includes everything needed to run it: code, runtime, system tools, system libraries, settings. Available for both Linux and Windows based apps, containerized software will always run the same, regardless of the environment. Containers isolate software from its surroundings, for example differences between development and staging environments and help reduce conflicts between teams running different software on the same infrastructure.
 
@@ -37,7 +37,7 @@ The Docker software as a service offering consists of three components:
 
 <dl>
   <dt>Software</dt>
-  <dd>The Docker daemon, called "`dockerd`" is a persistent process that manages Docker containers and handles container objects. The daemon listens for API requests sent by the Docker Engine API. The Docker client, which identifies itself as "`docker`", allows users to interact with Docker through CLI. It uses the Docker REST API to communicate with one or more Docker daemons.</dd>
+  <dd>The Docker daemon, called `dockerd` is a persistent process that manages Docker containers and handles container objects. The daemon listens for API requests sent by the Docker Engine API. The Docker client, which identifies itself as `docker`, allows users to interact with Docker through CLI. It uses the Docker REST API to communicate with one or more Docker daemons.</dd>
 
   <dt>Objects</dt>
   <dd>Docker objects refer to different entities used to assemble an application in Docker. The main Docker objects are images, containers, and services.
@@ -56,9 +56,9 @@ The Docker software as a service offering consists of three components:
 <center>
 <table align="center">
   <tr>
-    <th>[&#171; previous](README.md)</th>
-    <th>[Home](README.md)</th>
-    <th>[next &#187;](02_docker_commands.md)</th>
+    <th><a href="README.md">&#171; previous</a></th>
+    <th><a href="README.md">Home</a></th>
+    <th><a href="02_docker_commands.md">next &#187;</a></th>
   </tr>
 </table>
 </center>
