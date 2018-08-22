@@ -53,7 +53,11 @@ The Docker software as a service offering consists of three components:
 </dl>
 
 <center>
-| Navigation                   |
-|:-----------------------------|
-| << previous | Home | next >> |
+<table>
+  <tr>
+    <th>&#171; previous</th>
+    <th>Home</th>
+    <th>next &#187;</th>
+  </tr>
+</table>
 </center>
