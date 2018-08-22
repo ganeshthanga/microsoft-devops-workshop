@@ -14,6 +14,8 @@ K8s Documentation: https://kubernetes.io/docs/reference/command-line-tools-refer
 
 The scheduler can be considered the nervous system of Kubernetes. It is responsible for scheduling workload according to policies defined with variable topology, affinity, performance, capacity, and more. These policies are defined and stored with the same logic that runs the containers, and can be managed via SCM very easily.
 
+Since the Controler Manager is such a pivotal component, metrics can help point to issues in health and performance.  Metrics are provided via Golang runtime metrics: e.g. go_routine count and contoller specific metrics such as those from AWS,n GCE or Open Stack.  Meterics are emmited in Prometheus format and are human readable.  
+
 # Kubelet
 
 K8s Documentation: https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet/
