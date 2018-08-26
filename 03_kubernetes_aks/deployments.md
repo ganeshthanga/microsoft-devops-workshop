@@ -1,10 +1,10 @@
-## Deployments
+# Deployments
 
 A *[Deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)* controller provides declarative updates for Pods and ReplicaSets.
 
 You describe a desired state in a Deployment object, and the Deployment controller changes the actual state to the desired state at a controlled rate. You can define Deployments to create new ReplicaSets, or to remove existing Deployments and adopt all their resources with new Deployments.
 
-* Creating a Deployment
+## Creating a Deployment
 
 The following is an example of a Deployment. It creates a ReplicaSet to bring up three [Nginx](https://hub.docker.com/_/nginx/) Pods:
 ```
@@ -39,7 +39,7 @@ deployment.apps/nginx-deployment created (dry run)
 
 * Create the Deployment:
 ```
-$ kubectl create --record -f nginx-deployment.yml 
+$ kubectl create -f nginx-deployment.yml --record
 deployment "nginx-deployment" created
 ```
 Note: By appending `--record` to the above command, we are telling the API to record the current command in the annotations of the created or updated resource. This is useful for future review, such as investigating which commands were executed in each Deployment revision.
@@ -142,13 +142,17 @@ Note: A Deployment's rollout is triggered if, and only if, the Deployment's pod 
 
 Suppose that we want to update the Nginx Pods in the above Deployment to use the `nginx:1.9.1` image instead of the `nginx:1.7.9` image.
 
- $ kubectl set image deployment/nginx-deployment nginx=nginx:1.9.1
- deployment "nginx-deployment" image updated
+```
+$ kubectl set image deployment/nginx-deployment nginx=nginx:1.9.1
+deployment "nginx-deployment" image updated
+```
 
 Alternatively, we can edit the Deployment and change `.spec.template.spec.containers[0].image` from `nginx:1.7.9` to `nginx:1.9.1`:
 
- $ kubectl edit deployment/nginx-deployment
- deployment "nginx-deployment" edited
+```
+$ kubectl edit deployment/nginx-deployment
+deployment "nginx-deployment" edited
+```
 
 * Check on the rollout status:
 ```
