@@ -7,15 +7,21 @@ by Jerry Meisner and Christoph Champ for Redapt, Inc. (August 2018)
 
 1. [Introduction](01_introduction)
 1. [Docker](02_docker)
-   1. Benefits of Containers
-   2. Containerization
+   1. [Overview](02_docker/01_overview/README.md)
+       1. [Benefits of Containers](02_docker/01_overview/01_benefits_of_containers.md)
+       2. [Docker commands](02_docker/01_overview/02_docker_commands.md)
+   2. [Docker Directives](02_docker/02_docker_directives/README.md)
+   3. [Container Volume Management](02_docker/03_container_volume_management/README.md)
+   4. [Images](02_docker/04_images/README.md)
+   5. [Networking](02_docker/05_networking/README.md)
+   6. [Monitoring](02_docker/06_monitoring/README.md)
+   7. [Events](02_docker/07_events/README.md)
+   8. [Docker Compose](02_docker/08_docker_compose/README.md)
+   9. Containerization
       1. Java [JVM Specifics]
       2. .NET (Windows Base Containers)
-      3. Ruby
-      4. NodeJs
-      5. Python
-   3. Configurability
-   4. Security
+   10. Configurability
+   11. Security
 2. [Kubernetes / AKS](03_kubernetes_aks)
    1. [Overview / Moving Parts](03_kubernetes_aks/01_overview)
       1. [ETCD](03_kubernetes_aks/01_overview/01_etcd.md)
@@ -31,13 +37,14 @@ by Jerry Meisner and Christoph Champ for Redapt, Inc. (August 2018)
    3. Standing up your First Cluster
       1. MiniKube (Local)
       2. AKS
+      3. kubectl
+      4. [Labels, Selectors, and Annotations](03_kubernetes_aks/03_standing_up_your_first_cluster/04_labels_selectors_annotations.md)
    4. Deploying Stateless Applications
-      1. Hello-World
-      2. Config Maps / Secrets
+      1. [Deployments](03_kubernetes_aks/04_deploying_stateless_apps/01_deployments.md)
+      2. [Jobs](03_kubernetes_aks/04_deploying_stateless_apps/02_jobs.md)
    5. Deploying Stateful Applications
-      1. ELK Stack
-      2. PVC
-      3. Volume Types
+      1. [Volume Management](03_kubernetes_aks/04_deploying_stateful_apps/01_volume_management.md)
+      2. ELK Stack
    6. System Services
       1. Standard Kube-System Pods
       2. Third Party Add-Ons (Datadog, Helm)

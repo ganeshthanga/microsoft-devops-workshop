@@ -9,10 +9,9 @@ by Jerry Meisner and Christoph Champ for Redapt, Inc. (August 2018)
 *NOTE: This document assumes you already have Docker installed. If you do not already have Docker installed, please use the directions found [here](INSTALL.md) (note: only for Linux).*
 
 ## Table of Contents
-
 1. [Overview](01_overview/README.md)
-    1. [Benefits of Containers](01_benefits_of_containers.md)
-    2. [Docker commands](02_docker_commands.md)
+   1. [Benefits of Containers](01_overview/01_benefits_of_containers.md)
+   2. [Docker commands](01_overview/02_docker_commands.md)
 2. [Docker Directives](02_docker_directives/README.md)
 3. [Container Volume Management](03_container_volume_management/README.md)
 4. [Images](04_images/README.md)
@@ -20,3 +19,8 @@ by Jerry Meisner and Christoph Champ for Redapt, Inc. (August 2018)
 6. [Monitoring](06_monitoring/README.md)
 7. [Events](07_events/README.md)
 8. [Docker Compose](08_docker_compose/README.md)
+9. Containerization
+  1. Java [JVM Specifics]
+  2. .NET (Windows Base Containers)
+10. Configurability
+11. Security
