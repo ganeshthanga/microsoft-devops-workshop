@@ -11,6 +11,8 @@ by Jerry Meisner and Christoph Champ for Redapt, Inc. (August 2018)
 ## Table of Contents
 
 1. [Overview](01_overview/README.md)
+    1. [Benefits of Containers](01_benefits_of_containers.md)
+    2. [Docker commands](02_docker_commands.md)
 2. [Docker Directives](02_docker_directives/README.md)
 3. [Container Volume Management](03_container_volume_management/README.md)
 4. [Images](04_images/README.md)

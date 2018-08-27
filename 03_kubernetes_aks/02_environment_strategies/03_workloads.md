@@ -9,10 +9,15 @@ For instance, if you have a set of micro-services which consist of a web server 
 
 In a cloud landscape, these pools are generally defined as different scaling groups/sets. In the managed services model, sometimes these are referred to as node pools.
 
+#### Operating System
+With the rise of Windows containers, some users may find it necessary to run Windows Server nodes, and ensure that Windows-specific workload are scheduled onto those nodes. 
+
+Windows Server-based nodes are not available in AKS at this time. You can, however, use Virtual Kubelet to schedule Windows containers on Azure Container Instances and manage them as part of your AKS cluster. For more information, see Use Virtual Kubelet with AKS.
+
 #### Pod Resources
 One thing that is generally neglected for fist-time deployments are resource "requests" and "limits". These are parameters within a Pod or PodTemplate, at the container level, that tell Kubernetes how much hardware is necessary to run the set of containers. 
 
-If resource "requests" and "limits" are undefined, Kubernetes will allow workloads to run unbounded, and will be unable to tell the difference between a low utilization Pod (That may fit anywhere) and a high utilization Pod (that may not be able to co-habitate with other high utlization pods) at the time of scheduling.
+If resource "requests" and "limits" are undefined, Kubernetes will allow workloads to run unbounded, and will be unable to tell the difference between a low utilization Pod (that may fit anywhere) and a high utilization Pod (that may not be able to co-habitate with other high utlization pods) at the time of scheduling.
 
 If the container exceeds the limits, it will be automatically restarted by Kubernetes. If a single pod needs, at minimum ("requests"), almost the entire capacity of a node, its a sign that the nodes are too small:
 

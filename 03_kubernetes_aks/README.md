@@ -13,6 +13,12 @@ Kubernetes is built through the definition of a set of components (building bloc
 
 These "primitives" are designed to be loosely coupled (i.e., where little to no knowledge of the other component definitions is needed to use) as well as easily extensible through an API. Both the internal components of Kubernetes as well as the extensions and containers make use of this API.
 
+## Managed Kubernetes (AKS)
+
+In this workshop, we will discuss how to setup Kubernetes clusters via the Azure AKS service. In a managed cluster, many of the control-plane components are abstracted from the end-user. This means that Azure provides an SLA for the control-plane and leaves you to focus on deploying and managing your workloads.
+
+Because you won't have access to the nodes running etcd and the api, there are some customizations that may not be possible, at that level. 
+
 ## Table of Contents
 
 1. [Overview / Moving Parts](01_overview)
@@ -29,13 +35,14 @@ These "primitives" are designed to be loosely coupled (i.e., where little to no 
 3. Standing up your First Cluster
    1. MiniKube (Local)
    2. AKS
+   3. kubectl
+   4. Labels, Selectors, and Annotations
 4. Deploying Stateless Applications
-   1. Hello-World
-   2. Config Maps / Secrets
+   1. Deployments
+   2. Jobs
 5. Deploying Stateful Applications
-   1. ELK Stack
-   2. PVC
-   3. Volume Types
+   1. Volume Management
+   2. ELK Stack
 6. System Services
    1. Standard Kube-System Pods
    2. Third Party Add-Ons (Datadog, Helm)
