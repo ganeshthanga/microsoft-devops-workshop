@@ -24,3 +24,4 @@ by Jerry Meisner and Christoph Champ for Redapt, Inc. (August 2018)
   2. .NET (Windows Base Containers)
 10. Configurability
 11. Security
+12. DockerHub (Public/Private)

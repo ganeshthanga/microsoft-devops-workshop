@@ -22,6 +22,7 @@ by Jerry Meisner and Christoph Champ for Redapt, Inc. (August 2018)
       2. .NET (Windows Base Containers)
    10. Configurability
    11. Security
+   12. DockerHub (Public/Private)
 2. [Kubernetes / AKS](03_kubernetes_aks)
    1. [Overview / Moving Parts](03_kubernetes_aks/01_overview)
       1. [ETCD](03_kubernetes_aks/01_overview/01_etcd.md)
