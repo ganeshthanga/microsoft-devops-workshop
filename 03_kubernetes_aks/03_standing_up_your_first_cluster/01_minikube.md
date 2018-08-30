@@ -1,6 +1,6 @@
 # Minikube
 
-[Minikube](https://github.com/kubernetes/minikube Minikube) is a tool that makes it easy to run Kubernetes locally. Minikube runs a single-node Kubernetes cluster inside a VM on your laptop for users looking to try out Kubernetes or develop with it day-to-day.
+[Minikube](https://github.com/kubernetes/minikube) is a tool that makes it easy to run Kubernetes locally. Minikube runs a single-node Kubernetes cluster inside a VM on your laptop for users looking to try out Kubernetes or develop with it day-to-day.
 
 * Install Minikube:
 ```
@@ -8,7 +8,7 @@ $ curl -Lo minikube <nowiki>https://storage.googleapis.com/minikube/releases/lat
     && chmod +x minikube && sudo mv minikube /usr/local/bin/
 ```
 
-* Install kubectl (note: we go into greater detail on kubectl in an [upcoming section](03_kubectl.md):
+* Install kubectl (note: we go into greater detail on kubectl in an [upcoming section](03_kubectl.md)):
 ```
 $ curl -Lo kubectl <nowiki>https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl</nowiki> \
     && chmod +x kubectl && sudo mv kubectl /usr/local/bin/
@@ -21,6 +21,7 @@ $ minikube status
 $ minikube dashboard
 $ kubectl config view
 $ kubectl cluster-info
+$ minikube stop
 ```
 
 Get the details on the CLI options for kubectl in our upcoming section on [kubectl](03_kubectl).
@@ -53,28 +54,28 @@ Setting up kubeconfig...
 Kubectl is now configured to use the cluster.
 ```
 
-* Create a deployment:
+* Create a Deployment:
 ```
 $ kubectl run hello-minikube --image=k8s.gcr.io/echoserver:1.4 --port=8080
 deployment.apps/hello-minikube created
 ```
 
-* Expose the deployment by creating a service (of type `NodePort`):
+* Expose the Deployment by creating a Service (of type `NodePort`):
 ```
 $ kubectl expose deployment hello-minikube --type=NodePort
 service/hello-minikube exposed
 ```
 
-We have now launched an echoserver pod but we have to wait until the pod is up before curling/accessing it via the exposed service.
+We have now launched an "echos erver" Pod, but we have to wait until the Pod is up before curling/accessing it via the exposed Service.
 
-* To check whether the pod is up and running we can use the following:
+* To check whether the Pod is up and running, we can use the following:
 ```
 $ kubectl get pod --watch
 NAME                               READY     STATUS    RESTARTS   AGE
 hello-minikube-6c47c66d8-hn457     1/1       Running   0          13s
 ```
 
-* Once the Pod is "Running", we can now curl the service:
+* Once the Pod is "Running", we can now curl the Service:
 ```
 $ curl $(minikube service hello-minikube --url)
 CLIENT VALUES:
@@ -107,7 +108,7 @@ deployment.extensions "hello-minikube" deleted
 
 ## Proxy and dashboard
 
-Using the <code>`kubectl proxy`</code> command, kubectl will authenticate with the API Server on the Master Node and would make the dashboard available on <code>http://localhost:8001/ui</code>:
+Using the `kubectl proxy` command, kubectl will authenticate with the API Server on the Master Node and would make the dashboard available on <code>http://localhost:8001/ui</code>:
 ```
 $ kubectl proxy
 Starting to serve on 127.0.0.1:8001
