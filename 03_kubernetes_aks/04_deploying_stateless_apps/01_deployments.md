@@ -177,7 +177,7 @@ nginx-deployment   3         3         3            3           7m
 $ kubectl get replicaset
 NAME                          DESIRED   CURRENT   READY     AGE
 nginx-deployment-75675f5897   0         0         0         8m   # <- old ReplicaSet using nginx:1.7.9
-nginx-deployment-c4747d96c    3         3         3         57s  # # <- new ReplicaSet using nginx:1.9.1
+nginx-deployment-c4747d96c    3         3         3         57s  # <- new ReplicaSet using nginx:1.9.1
 
 $ kubectl rollout history deployment/nginx-deployment
 deployments "nginx-deployment"
@@ -208,7 +208,7 @@ $ kubectl rollout undo deployment/nginx-deployment
 deployment "nginx-deployment" rolled back
 ```
 
-Alternatively, you can rollback to a specific revision by specify that in --to-revision:
+Alternatively, you can rollback to a specific revision by specify that in `--to-revision`:
 ```
 $ kubectl rollout undo deployment/nginx-deployment --to-revision=1
 deployment "nginx-deployment" rolled back
