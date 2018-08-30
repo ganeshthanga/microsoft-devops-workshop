@@ -33,9 +33,9 @@ Because you won't have access to the nodes running etcd and the api, there are s
    2. [Service Discovery / KubeDNS](02_environment_strategies/02_service_discovery.md)
    3. [Workloads](02_environment_strategies/03_workloads.md)
 3. Standing up your First Cluster
-   1. MiniKube (Local)
+   1. [Minikube (Local)](03_standing_up_your_first_cluster/01_minikube.md)
    2. AKS
-   3. kubectl
+   3. [kubectl](03_standing_up_your_first_cluster/03_kubectl.md)
    4. [Labels, Selectors, and Annotations](03_standing_up_your_first_cluster/04_labels_selectors_annotations.md)
 4. [Deploying Stateless Applications](04_deploying_stateless_apps)
    1. [Deployments](04_deploying_stateless_apps/01_deployments.md)
@@ -51,7 +51,7 @@ Because you won't have access to the nodes running etcd and the api, there are s
    2. Third Party Add-Ons (Datadog, Helm)
    3. Developing from Scratch
 7. Ingress / Traffic Routing
-   1. Defining Services ( ClusterIP / NodePort / LoadBalancer )
+   1. Defining Services (ClusterIP / NodePort / LoadBalancer)
    2. Ingress Controllers / Rules
 8. Auto-Scaling / SRE
    1. Resources (Limits / Requests)

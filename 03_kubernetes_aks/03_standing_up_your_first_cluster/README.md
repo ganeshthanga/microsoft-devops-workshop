@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-1. [MiniKube (Local)](01_minikube.md)
+1. [Minikube (Local)](01_minikube.md)
 2. AKS
 3. [kubectl](03_kubectl.md)
 4. [Labels, Selectors, and Annotations](04_labels_selectors_annotations.md)
