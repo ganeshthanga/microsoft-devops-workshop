@@ -37,19 +37,19 @@ The Docker software as a service offering consists of three components:
 
 <dl>
   <dt>Software</dt>
-  <dd>The Docker daemon, called <code>dockerd</code> is a persistent process that manages Docker containers and handles container objects. The daemon listens for API requests sent by the Docker Engine API. The Docker client, which identifies itself as <code>docker</code>, allows users to interact with Docker through CLI. It uses the Docker REST API to communicate with one or more Docker daemons.</dd>
+  <dd>The Docker daemon, called <code>dockerd</code>, is a persistent process that manages Docker containers and handles container objects. The daemon listens for API requests sent by the Docker Engine API. The Docker client, which identifies itself as <code>docker</code>, allows users to interact with Docker through CLI. It uses the Docker REST API to communicate with one or more Docker daemons.</dd>
 
   <dt>Objects</dt>
   <dd>Docker objects refer to different entities used to assemble an application in Docker. The main Docker objects are images, containers, and services.
   <ul>
     <li>A Docker container is a standardized, encapsulated environment that runs applications. A container is managed using the Docker API or CLI.</li>
     <li>A Docker image is a read-only template used to build containers. Images are used to store and ship applications.</li>
-    <li>A Docker service allows containers to be scaled across multiple Docker daemons. The result is known as a "swarm", cooperating daemons that communicate through the Docker API.</li>
+    <li>A Docker service allows containers to be scaled across multiple Docker daemons. The result is known as a "swarm"; cooperating daemons that communicate through the Docker API.</li>
   </ul>
   </dd>
 
   <dt>Registries</dt>
-  <dd>A Docker registry is a repository for Docker images. Docker clients connect to registries to download ("pull") images for use or upload ("push") images that they have built. Registries can be public or private. Two main public registries are Docker Hub and Docker Cloud. Docker Hub is the default registry where Docker looks for images.</dd>
+  <dd>A Docker registry is a repository for Docker images. Docker clients connect to registries to download ("pull") images for use or upload ("push") images that they have built. Registries can be public or private. The two main public registries are [Docker Hub](https://hub.docker.com/) and [Docker Cloud](https://cloud.docker.com/). Docker Hub is the default registry where Docker looks for images.</dd>
 </dl>
 
 <hr>
