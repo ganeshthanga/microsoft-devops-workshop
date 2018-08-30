@@ -7,7 +7,7 @@ There are two primary windows base images:
 1. `microsoft/windowsservercore` [.NET Framework] - Larger image, compatible with existing Windows apps, IIS 
 2. `microsoft/nanoserver` [.NET Core] - Much smaller image, used to deploy applications that run in the background and don't use the services of a full server OS, and may even laucn their own web server such as Kestrel. Microsoft has published a scanner that can determine if your app can be run on nanoserver. https://blogs.technet.microsoft.com/nanoserver/2016/04/27/nanoserverapiscan-exe-updated-for-tp5/
 
-There are a few Cicrosoft supported variants of these 2 base images, listed at the bottom of this page.
+There are a few Microsoft supported variants of these 2 base images, listed at the bottom of this page.
 https://docs.microsoft.com/en-us/dotnet/standard/microservices-architecture/net-core-net-framework-containers/net-container-os-targets
 
 You can see the base image we used for the netcore react demo in section 1: `microsoft/dotnet:2.1-aspnetcore-runtime`
