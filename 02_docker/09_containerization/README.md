@@ -31,9 +31,9 @@ It's important to get your development environment setup to work with containers
 
 
 
-### Examples
+### Examples and Information
 
-We have prepared a couple of examples, that can be built and deployed, during the workshop.
+We have prepared an example, that can be built and deployed, during the workshop.
 
 ## Table of Contents
 1. [.NET Core - ReactJS](01_netcore_react.md)
