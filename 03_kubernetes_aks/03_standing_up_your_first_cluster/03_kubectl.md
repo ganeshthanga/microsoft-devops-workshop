@@ -46,7 +46,7 @@ NAME       STATUS    ROLES     AGE       VERSION
 minikube   Ready     master    7d        v1.10.0
 ```
 
-Or, export the `KUBECONFIG` environment variables like so:
+Or, export the `KUBECONFIG` environment variable like so:
 ```
 $ export KUBECONFIG=/home/xtof/.kube/my_kube_config
 $ kubectl get nodes
@@ -124,4 +124,141 @@ Also, use `kubectl options` for a list of global command-line options (applies t
 
 ## Common operations
 
+Use the following set of examples to help you familiarize yourself with running the commonly used kubectl operations:
 
+### <code>kubectl create</code> - Create a resource from a file or stdin.
+
+* Create a service using the definition in `example-service.yaml`:
+```
+$ kubectl create -f example-service.yaml
+```
+
+* Create a replication controller using the definition in `example-controller.yaml`:
+```
+$ kubectl create -f example-controller.yaml
+```
+
+* Create the objects that are defined in any .yaml, .yml, or .json file within the `<directory>` directory:
+```
+$ kubectl create -f <directory>
+```
+
+### <code>kubectl get</code>
+
+List one or more resources.
+
+* List all pods in plain-text output format:
+```
+$ kubectl get pods
+```
+
+* List all pods in plain-text output format and includes additional information (such as node name):
+```
+$ kubectl get pods -o wide
+```
+
+* List the replication controller with the specified name in plain-text output format (tip: You can shorten and replace the '`replicationcontroller`' resource type with the alias '`rc`'):
+```
+$ kubectl get replicationcontroller <rc-name>
+```
+
+* List all replication controllers and services together in plain-text output format:
+```
+$ kubectl get rc,services
+```
+
+* List all daemon sets, including uninitialized ones, in plain-text output format:
+```
+$ kubectl get ds --include-uninitialized
+```
+
+* List all pods running on node `server01`:
+```
+$ kubectl get pods --field-selector=spec.nodeName=server01
+```
+
+* List all pods in plain-text output format, delegating the details of printing to the server:
+```
+$ kubectl get pods --experimental-server-print
+```
+
+### <code>kubectl describe</code>
+
+Display detailed state of one or more resources, including the uninitialized ones by default.
+
+* Display the details of the node with name `<node-name>`:
+```
+$ kubectl describe nodes <node-name>
+```
+
+* Display the details of the pod with name `<pod-name>`:
+```
+$ kubectl describe pods/<pod-name>
+```
+
+* Display the details of all the pods that are managed by the replication controller named `<rc-name>`. Remember: Any pods that are created by the replication controller get prefixed with the name of the replication controller:
+```
+$ kubectl describe pods <rc-name>
+```
+
+* Describe all pods, not including uninitialized ones:
+```
+$ kubectl describe pods --include-uninitialized=false
+```
+
+### <code>kubectl delete</code>
+
+Delete resources either from a file, stdin, or specifying label selectors, names, resource selectors, or resources.
+
+* Delete a pod using the type and name specified in the `pod.yaml` file:
+```
+$ kubectl delete -f pod.yaml
+```
+
+* Delete all the pods and services that have the label `name=<label-name>`:
+```
+$ kubectl delete pods,services -l name=<label-name>
+```
+
+* Delete all the pods and services that have the label `name=<label-name>`, including uninitialized ones:
+```
+$ kubectl delete pods,services -l name=<label-name> --include-uninitialized
+```
+
+* Delete all pods, including uninitialized ones:
+```
+$ kubectl delete pods --all
+```
+
+### <code>kubectl exec</code>
+
+Execute a command against a container in a pod.
+
+* Get output from running 'date' from pod `<pod-name>`. By default, output is from the first container:
+```
+$ kubectl exec <pod-name> date
+```
+
+* Get output from running 'date' in container `<container-name>` of pod `<pod-name>`:
+```
+$ kubectl exec <pod-name> -c <container-name> date
+```
+
+* Get an interactive TTY and run `/bin/bash` from pod `<pod-name>`. By default, output is from the first container:
+```
+$ kubectl exec -ti <pod-name> /bin/bash
+```
+
+### <code>kubectl logs</code>
+
+Print the logs for a container in a pod.
+
+* Return a snapshot of the logs from pod `<pod-name>`:
+```
+$ kubectl logs <pod-name>
+```
+
+* Start streaming the logs from pod `<pod-name>`. This is similar to the '`tail -f`' Linux command:
+```
+$ kubectl logs -f <pod-name>
+```
