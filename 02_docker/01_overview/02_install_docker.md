@@ -1,6 +1,6 @@
 ## Docker install
 
-This document will show you how to install Docker on Linux (either Debian-based or Red Hat-based).
+This document will show you how to install Docker on Linux (either Debian-based or Red Hat-based). See the end of the document for links on how to install Docker on macos and Windows.
 
 ### Debian-based distros
 
@@ -124,3 +124,8 @@ This message shows that your installation appears to be working correctly.
 ```
 
 That's it! You should now have Docker successfully installed.
+
+# External links
+
+* [Install Docker on macos](https://docs.docker.com/docker-for-mac/install/#install-and-run-docker-for-mac)
+* [Install Docker on Windows](https://docs.docker.com/docker-for-windows/install/#start-docker-for-windows)
