@@ -41,7 +41,7 @@ by Jerry Meisner and Christoph Champ for Redapt, Inc. (August 2018)
    3. Standing up your First Cluster
       1. MiniKube (Local)
       2. AKS
-      3. kubectl
+      3. [kubectl](03_kubernetes_aks/03_standing_up_your_first_cluster/03_kubectl.md)
       4. [Labels, Selectors, and Annotations](03_kubernetes_aks/03_standing_up_your_first_cluster/04_labels_selectors_annotations.md)
    4. Deploying Stateless Applications
       1. [Deployments](03_kubernetes_aks/04_deploying_stateless_apps/01_deployments.md)
