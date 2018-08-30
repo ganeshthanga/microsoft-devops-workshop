@@ -40,8 +40,8 @@ Because you won't have access to the nodes running etcd and the api, there are s
 4. [Deploying Stateless Applications](04_deploying_stateless_apps)
    1. [Deployments](04_deploying_stateless_apps/01_deployments.md)
    2. [Jobs](04_deploying_stateless_apps/02_jobs.md)
-   3. [Daemon Sets](04_deploying_stateless_apps/03_daemon_sets.md)
-   4. [Configmaps and Secrets](04_deploying_stateless_apps/04_configmaps_and_secrets.md)
+   3. [DaemonSets](04_deploying_stateless_apps/03_daemon_sets.md)
+   4. [ConfigMaps and Secrets](04_deploying_stateless_apps/04_configmaps_and_secrets.md)
    5. Revisiting our .NET Core - ReactJS example
 5. Deploying Stateful Applications
    1. [Volume Management](05_deploying_stateful_apps/01_volume_management.md)

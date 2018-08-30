@@ -2,12 +2,12 @@
 
 While deploying an application, we may need to pass such runtime parameters like configuration details, passwords, etc. For example, let's assume we need to deploy ten different applications for our customers, and, for each customer, we just need to change the name of the company in the UI. Instead of creating ten different Docker images for each customer, we can just use the template image and pass the customers' names as a runtime parameter. In such cases, we can use the ConfigMap API resource. Similarly, when we want to pass sensitive information, we can use the Secret API resource. Think ''Secrets'' (for confidential data) and ''ConfigMaps'' (for non-confidential data).
 
+## ConfigMaps
+
 [ConfigMaps](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/) allow you to decouple configuration artifacts from image content to keep containerized applications portable. Using ConfigMaps, we can pass configuration details as key-value pairs, which can be later consumed by Pods or any other system components, such as controllers. We can create ConfigMaps in two ways:
 
-* From literal values; and
-* From files.
-
-## ConfigMaps
+1. From literal values; and
+2. From files.
 
 * Create a ConfigMap:
 ```
