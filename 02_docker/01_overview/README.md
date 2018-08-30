@@ -11,4 +11,12 @@ by Jerry Meisner and Christoph Champ for Redapt, Inc. (August 2018)
 ## Table of Contents
 
 1. [Benefits of Containers](01_benefits_of_containers.md)
-2. [Docker commands](02_docker_commands.md)
+2. [Install Docker](02_install_docker.md)
+3. [Docker commands](03_docker_commands.md)
+4. [Docker Directives](04_docker_directives.md)
+5. [Container Volume Management](05_container_volume_management.md)
+6. [Images](06_images.md)
+7. [Networking](07_networking.md)
+8. [Monitoring](08_monitoring.md)
+9. [Events](09_events.md)
+10. Docker Image Repositories (Public/Private)
