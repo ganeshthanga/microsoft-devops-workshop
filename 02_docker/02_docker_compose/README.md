@@ -13,7 +13,7 @@ Using Compose is basically a three-step process:
 
 In this basic example, we will build a simple Python web application running on Docker Compose. The application uses the Flask framework and maintains a hit counter in Redis.
 
-*Note: This section assumes you already have Docker Engine and Docker Compose installed.*
+*Note: This section assumes you already have Docker Engine and [Docker Compose](https://docs.docker.com/compose/install/) installed.*
 
 * Create a directory for the project:
 ```
