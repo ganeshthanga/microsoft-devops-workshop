@@ -2,7 +2,7 @@
 
 For the following demo, we will be working from the following directory:
 
-[examples/netcore-react/spa-react-netcore-redis/voting/voting](examples/netcore-react/spa-react-netcore-redis/voting/voting)
+cd `examples/netcore-react/spa-react-netcore-redis/voting/voting`
 
 We have pre-developed an application that uses redis to track votes, for favorite beers. The back-end exposes an API that would allow a customer or bartender to enter a +1 for a particular beverage. Our UI component is a single-page ReactJS app. We want to serve the front-end and the back-end api from the same container, but plan to have redis running in a seperate container.
 
