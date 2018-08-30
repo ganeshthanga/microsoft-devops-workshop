@@ -7,7 +7,7 @@ by Jerry Meisner and Christoph Champ for Redapt, Inc. (August 2018)
 
 1. [Introduction](01_introduction)
 1. [Docker](02_docker)
-   1. [Overview](02_docker/01_overview/README.md)
+   1. [Overview](02_docker/01_overview)
        1. [Benefits of Containers](02_docker/01_overview/01_benefits_of_containers.md)
        2. [Docker commands](02_docker/01_overview/02_docker_commands.md)
    2. [Docker Directives](02_docker/02_docker_directives/README.md)
@@ -17,10 +17,10 @@ by Jerry Meisner and Christoph Champ for Redapt, Inc. (August 2018)
    6. [Monitoring](02_docker/06_monitoring/README.md)
    7. [Events](02_docker/07_events/README.md)
    8. [Docker Compose](02_docker/08_docker_compose/README.md)
-   9. Containerization
-      1. Java [JVM Specifics]
-      2. .NET (Windows Base Containers)
-   10. Configurability
+   9. [Containerization](02_docker/09_containerization)
+       1. [.NET Core - ReactJS](09_containerization/01_netcore_react.md)
+       2. [Java Spring Boot](09_containerization/02_java_spring.md)
+       3. [Windows Containers](09_containerization/03_windows.md)
    11. Security
    12. DockerHub (Public/Private)
 2. [Kubernetes / AKS](03_kubernetes_aks)

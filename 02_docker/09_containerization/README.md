@@ -37,4 +37,5 @@ We have prepared a couple of examples, that can be built and deployed, during th
 
 ## Table of Contents
 1. [.NET Core - ReactJS](01_netcore_react.md)
-1. [Java Spring Boot](02_java_spring.md)
+2. [Java Spring Boot](02_java_spring.md)
+3. [Windows Containers](03_windows.md)

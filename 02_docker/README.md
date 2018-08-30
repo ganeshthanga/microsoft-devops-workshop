@@ -19,9 +19,9 @@ by Jerry Meisner and Christoph Champ for Redapt, Inc. (August 2018)
 6. [Monitoring](06_monitoring/README.md)
 7. [Events](07_events/README.md)
 8. [Docker Compose](08_docker_compose/README.md)
-9. Containerization
-  1. Java [JVM Specifics]
-  2. .NET (Windows Base Containers)
-10. Configurability
-11. Security
-12. DockerHub (Public/Private)
+9. [Containerization](09_containerization)
+    1. [.NET Core - ReactJS](09_containerization/01_netcore_react.md)
+    2. [Java Spring Boot](09_containerization/02_java_spring.md)
+    3. [Windows Containers](09_containerization/03_windows.md)
+10. Security
+11. DockerHub (Public/Private)
