@@ -126,7 +126,9 @@ Also, use `kubectl options` for a list of global command-line options (applies t
 
 Use the following set of examples to help you familiarize yourself with running the commonly used kubectl operations:
 
-### <code>kubectl create</code> - Create a resource from a file or stdin.
+### <code>kubectl create</code>
+
+Create a resource from a file or stdin.
 
 * Create a service using the definition in `example-service.yaml`:
 ```
