@@ -46,6 +46,8 @@ by Jerry Meisner and Christoph Champ for Redapt, Inc. (August 2018)
    4. Deploying Stateless Applications
       1. [Deployments](03_kubernetes_aks/04_deploying_stateless_apps/01_deployments.md)
       2. [Jobs](03_kubernetes_aks/04_deploying_stateless_apps/02_jobs.md)
+      3. [Daemon Sets](03_kubernetes_aks/04_deploying_stateless_apps/03_daemon_sets.md)
+      4. [Configmaps and Secrets](03_kubernetes_aks/04_deploying_stateless_apps/04_configmaps_and_secrets.md)
    5. Deploying Stateful Applications
       1. [Volume Management](03_kubernetes_aks/04_deploying_stateful_apps/01_volume_management.md)
       2. ELK Stack
