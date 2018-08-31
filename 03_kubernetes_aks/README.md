@@ -46,7 +46,7 @@ Because you won't have access to the nodes running etcd and the api, there are s
    4. [ConfigMaps and Secrets](04_deploying_stateless_apps/04_configmaps_and_secrets.md)
 5. Deploying Stateful Applications
    1. [Volume Management](05_deploying_stateful_apps/01_volume_management.md)
-   2. ELK Stack
+   2. [Stateful Sets](05_deploying_stateful_apps/02_stateful_sets.md)
 6. System Services
    1. Standard Kube-System Pods
    2. Third Party Add-Ons (Datadog, Helm)
