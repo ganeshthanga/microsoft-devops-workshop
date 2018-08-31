@@ -35,9 +35,10 @@ by Jerry Meisner and Christoph Champ for Redapt, Inc. (August 2018)
       5. [Primitives (Deployments / Services / Pods / etc)](03_kubernetes_aks/01_overview/05_k8s_primitives.md)
       6. [RBAC / Service Accounts](03_kubernetes_aks/01_overview/06_rbac.md)
    2. [Environment Strategies (NonProd/Prod vs Dev/Test/Cert/Prod)](03_kubernetes_aks/02_environment_strategies)
-      1. [Environments](03_kubernetes_aks/02_environment_strategies/01_environments.md)
-      2. [Service Discovery / KubeDNS](03_kubernetes_aks/02_environment_strategies/02_service_discovery.md)
-      3. [Workloads](03_kubernetes_aks/02_environment_strategies/03_workloads.md)
+      1. [Namespaces](03_kubernetes_aks/02_environment_strategies/01_namespaces.md)
+      2. [Environments](03_kubernetes_aks/02_environment_strategies/02_environments.md)
+      3. [Service Discovery / KubeDNS](03_kubernetes_aks/02_environment_strategies/03_service_discovery.md)
+      4. [Workloads](03_kubernetes_aks/02_environment_strategies/04_workloads.md)
    3. [Standing up your First Cluster](03_kubernetes_aks/03_standing_up_your_first_cluster)
       1. [Minikube (Local)](03_kubernetes_aks/03_standing_up_your_first_cluster/01_minikube.md)
       2. AKS
@@ -49,7 +50,7 @@ by Jerry Meisner and Christoph Champ for Redapt, Inc. (August 2018)
       3. [DaemonSets](03_kubernetes_aks/04_deploying_stateless_apps/03_daemon_sets.md)
       4. [ConfigMaps and Secrets](03_kubernetes_aks/04_deploying_stateless_apps/04_configmaps_and_secrets.md)
    5. Deploying Stateful Applications
-      1. [Volume Management](03_kubernetes_aks/04_deploying_stateful_apps/01_volume_management.md)
+      1. [Volume Management](03_kubernetes_aks/05_deploying_stateful_apps/01_volume_management.md)
       2. ELK Stack
    6. System Services
       1. Standard Kube-System Pods
@@ -57,7 +58,7 @@ by Jerry Meisner and Christoph Champ for Redapt, Inc. (August 2018)
       3. Developing from Scratch
    7. Ingress / Traffic Routing
       1. Defining Services (ClusterIP / NodePort / LoadBalancer)
-      2. Ingress Controllers / Rules
+      2. [Ingress Controllers / Rules](03_kubernetes_aks/07_ingress_traffic_management/02_ingress_controllers_rules.md)
    8. Auto-Scaling / SRE
       1. Resources (Limits / Requests)
       2. Horizontal Pod Autoscaling
