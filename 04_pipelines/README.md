@@ -17,5 +17,6 @@ We will also cover Jenkins, Immutable Builds, and Integration testing, to close 
    6. [ELK Stack (Logging)](https://github.com/helm/charts/tree/master/stable/fluentd-elasticsearch)
    7. [Jenkins Stack](https://github.com/helm/charts/tree/master/stable/jenkins)
 2. [Jenkins on K8s](02_jenkins)
+   1. [Install Jenkins](02_jenkins/01_install_jenkins.md)
 3. [Containers as a Build Artifact / Promoting Builds](03_immutable_builds)
 4. [Integration Testing Microservices](04_integration_testing_microservices)

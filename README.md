@@ -78,6 +78,7 @@ by Jerry Meisner and Christoph Champ for Redapt, Inc. (August 2018)
       5. [Ingress Controller](https://github.com/helm/charts/tree/master/stable/nginx-ingress)
       6. [ELK Stack (Logging)](https://github.com/helm/charts/tree/master/stable/fluentd-elasticsearch)
       7. [Jenkins Stack](https://github.com/helm/charts/tree/master/stable/jenkins)
-   2. Jenkins on K8s
+   2. [Jenkins on K8s](04_pipelines/02_jenkins)
+      1. [Install Jenkins](04_pipelines/02_jenkins/01_install_jenkins.md)
    3. Containers as a Build Artifact / Promoting Builds
    4. Integration Testing Micro-Services
