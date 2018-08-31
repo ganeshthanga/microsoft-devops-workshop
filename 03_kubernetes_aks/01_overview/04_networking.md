@@ -23,6 +23,8 @@ Flannel runs a small, single binary agent called flanneld on each host, and is r
 
 Read More: https://github.com/coreos/flannel
 
+**NOTE:** There is a NetworkPolicy kubernetes primitive, which seeks to enable pod firewalling the same way other resources are defined, and flannel does not support this. If you need this feature, please choose an appropriate CNI.
+
 ## Calico
 
 Calico can be deployed without encapsulation or overlays to provide high-performance, high-scale data center networking. Calico also provides fine-grained, intent based network security policy for Kubernetes pods via its distributed firewall. It creates and manages a flat layer 3 network, assigning each workload a fully routable IP address.

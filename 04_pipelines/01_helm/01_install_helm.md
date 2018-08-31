@@ -45,3 +45,6 @@ subjects:
 `helm search`
 
 `helm repo update`
+
+Additional commands can be gleamed from their source!
+https://docs.helm.sh/helm/#helm

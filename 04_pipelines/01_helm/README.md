@@ -6,7 +6,17 @@ Charts are easy to create, version, share, and publish — so start using Helm a
 
 The latest version of Helm is maintained by the CNCF - in collaboration with Microsoft, Google, Bitnami and the Helm contributor community.
 
-Each helm chart consists of templatized kubernetes primitives (deployments, services, volumes, etc), that are generated prior to deploy, based on a pre-defined set of values, that are shared between the resources/primitives. This makes managing multiple deployments and environments much simpler. Rather than having the full set of yml files for each individual deployment in scm, you can maintain one `instance-values.yml` file for each environment. You can make changes to the chart, and then incrementally roll the changes out to your environments, in a controlled fashion.
+Each helm chart consists of templatized kubernetes primitives (deployments, services, volumes, etc), that are generated prior to deploy, based on a pre-defined set of values, that are shared between the resources/primitives. 
+
+This makes managing multiple deployments and environments much simpler. Rather than having the full set of yml files for each individual deployment in scm, you can maintain one `instance-values.yml` file for each deployment. You can make changes to the chart, and then incrementally roll the changes out to your environments, in a controlled fashion.
+
+- Helm has two parts: a client (helm) and a server (tiller)
+- Tiller runs inside of your Kubernetes cluster, and manages releases (installations) of your charts.
+- Helm runs on your laptop, CI/CD, or wherever you want it to run.
+- Charts are Helm packages that contain at least two things:
+  - A description of the package (Chart.yaml)
+  - One or more templates, which contain Kubernetes manifest files
+- Charts can be stored on disk, or fetched from remote chart repositories (like Debian or RedHat packages)
 
 ## Table of Contents
 
