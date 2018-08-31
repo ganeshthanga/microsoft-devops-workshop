@@ -10,6 +10,12 @@ We will also cover Jenkins, Immutable Builds, and Integration testing, to close 
 
 1. [Helm](01_helm)
    1. [Install Helm](01_helm/01_install_helm.md)
+   2. [Reading Charts](01_helm/02_reading_charts.md)
+   3. [Creating Charts](01_helm/03_creating_charts.md)
+   4. [State Metrics](https://github.com/helm/charts/tree/master/stable/kube-state-metrics)
+   5. [Ingress Controller](https://github.com/helm/charts/tree/master/stable/nginx-ingress)
+   6. [ELK Stack (Logging)](https://github.com/helm/charts/tree/master/stable/fluentd-elasticsearch)
+   7. [Jenkins Stack](https://github.com/helm/charts/tree/master/stable/jenkins)
 2. [Jenkins on K8s](02_jenkins)
 3. [Containers as a Build Artifact / Promoting Builds](03_immutable_builds)
 4. [Integration Testing Microservices](04_integration_testing_microservices)

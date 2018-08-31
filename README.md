@@ -70,8 +70,8 @@ by Jerry Meisner and Christoph Champ for Redapt, Inc. (August 2018)
       1. [Setting Up Redis](03_kubernetes_aks/09_revisiting_netcore_react/01_setting_up_redis.md)
       2. [Setting Up Our Web App](03_kubernetes_aks/09_revisiting_netcore_react/02_setting_up_our_web_app.md)
 4. Pipelines
-   1. Helm
-      1. [Install Helm](01_helm/01_install_helm.md)
+   1. [Helm](04_pipelines/01_helm)
+      1. [Install Helm](04_pipelines/01_helm/01_install_helm.md)
       2. [State Metrics](https://github.com/helm/charts/tree/master/stable/kube-state-metrics)
       3. [Ingress Controller](https://github.com/helm/charts/tree/master/stable/nginx-ingress)
       4. [ELK Stack (Logging)](https://github.com/helm/charts/tree/master/stable/fluentd-elasticsearch)
