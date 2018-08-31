@@ -54,7 +54,9 @@ spec:
     spec:
       containers:
       - name: favorite-beer-redis
-        image: redaptcloud/redis:v1
+        image: redaptcloud/redis:3.2-alpine
+        command: ["redis-server"]
+        args: ["--appendonly", "yes"]
         ports:
         - containerPort: 6379
           name: redis
@@ -62,6 +64,10 @@ spec:
 
 
 Notable Differences:
+1. The deployment metadata is included, and controller information are also included. 
+2. The containers section is populated from the `redis` section, and command is split into command and args.
+3. `ports` becomes more defined, since we prefer to name ports in Kubernetes, and we have more options available.
+4. We have not included any information about volumes, getting moutned to the container, yet.
 
 ## Persistent Volumes
 
