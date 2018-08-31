@@ -9,6 +9,7 @@ We will also cover Jenkins, Immutable Builds, and Integration testing, to close 
 ## Table of Contents
 
 1. [Helm](01_helm)
+   1. [Install Helm](01_helm/01_install_helm.md)
 2. [Jenkins on K8s](02_jenkins)
 3. [Containers as a Build Artifact / Promoting Builds](03_immutable_builds)
 4. [Integration Testing Microservices](04_integration_testing_microservices)
