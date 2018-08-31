@@ -32,7 +32,7 @@ Because you won't have access to the nodes running etcd and the api, there are s
    1. [Environments](02_environment_strategies/01_environments.md)
    2. [Service Discovery / KubeDNS](02_environment_strategies/02_service_discovery.md)
    3. [Workloads](02_environment_strategies/03_workloads.md)
-3. Standing up your First Cluster
+3. [Standing up your First Cluster](03_standing_up_your_first_cluster)
    1. [Minikube (Local)](03_standing_up_your_first_cluster/01_minikube.md)
    2. AKS
    3. [kubectl](03_standing_up_your_first_cluster/03_kubectl.md)
