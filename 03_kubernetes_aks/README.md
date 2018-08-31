@@ -51,8 +51,8 @@ Because you won't have access to the nodes running etcd and the api, there are s
    1. Standard Kube-System Pods
    2. Third Party Add-Ons (Datadog, Helm)
    3. Developing from Scratch
-7. Ingress / Traffic Routing
-   1. Defining Services (ClusterIP / NodePort / LoadBalancer)
+7. [Ingress / Traffic Routing](07_ingress_traffic_management)
+   1. [Defining Services (ClusterIP / NodePort / LoadBalancer)](07_ingress_traffic_management/01_defining_services.md)
    2. [Ingress Controllers / Rules](07_ingress_traffic_management/02_ingress_controllers_rules.md)
 8. Auto-Scaling / SRE
    1. Resources (Limits / Requests)

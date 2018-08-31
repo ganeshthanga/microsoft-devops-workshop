@@ -54,8 +54,8 @@ by Jerry Meisner and Christoph Champ for Redapt, Inc. (August 2018)
    5. Deploying Stateful Applications
       1. [Volume Management](03_kubernetes_aks/05_deploying_stateful_apps/01_volume_management.md)
       2. [Stateful Sets](03_kubernetes_aks/05_deploying_stateful_apps/02_stateful_sets.md)
-   7. Ingress / Traffic Routing
-      1. Defining Services (ClusterIP / NodePort / LoadBalancer)
+   7. [Ingress / Traffic Routing](03_kubernetes_aks/07_ingress_traffic_management)
+      1. [Defining Services (ClusterIP / NodePort / LoadBalancer)](03_kubernetes_aks/07_ingress_traffic_management/01_defining_services.md)
       2. [Ingress Controllers / Rules](03_kubernetes_aks/07_ingress_traffic_management/02_ingress_controllers_rules.md)
    6. System Services
       1. Standard Kube-System Pods
