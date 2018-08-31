@@ -28,6 +28,7 @@ Because you won't have access to the nodes running etcd and the api, there are s
    4. [Networking (Flannel/Calico)](01_overview/04_networking.md)
    5. [Primitives (Deployments / Services / Pods / etc)](01_overview/05_k8s_primitives.md)
    6. [RBAC / Service Accounts](01_overview/06_rbac.md)
+   7. [Cloud Provider](01_overview/07_cloud_provider.md)
 2. [Environment Strategies (NonProd/Prod vs Dev/Test/Cert/Prod)](02_environment_strategies)
    1. [Namespaces](02_environment_strategies/01_namespaces.md)
    2. [Environments](02_environment_strategies/02_environments.md)

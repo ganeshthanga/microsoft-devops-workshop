@@ -10,3 +10,4 @@
 4. [Networking (Flannel/Calico)](04_networking.md)
 5. [Primitives (Deployments / Services / Pods / etc)](05_k8s_primitives.md)
 6. [RBAC / Service Accounts](06_rbac.md)
+7. [Cloud Provider](07_cloud_provider.md)
