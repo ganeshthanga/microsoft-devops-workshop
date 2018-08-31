@@ -1,0 +1,58 @@
+#!/usr/bin/env groovy
+
+
+podTemplate(label: 'io-publish',
+  containers: [
+    containerTemplate(name: 'docker', image: 'docker:latest', ttyEnabled: true, command: 'cat'),
+    containerTemplate(name: 'helm', image: "lachlanevenson/k8s-helm:v2.8.2", ttyEnabled: true, command: 'cat'),
+    containerTemplate(name: 'kubectl', image: "lachlanevenson/k8s-kubectl:v1.11.1", ttyEnabled: true, command: 'cat')
+  ],
+  volumes: [
+    hostPathVolume(hostPath: '/var/run/docker.sock', mountPath: '/var/run/docker.sock')
+  ],
+  serviceAccount: 'jenkins'
+)
+
+{
+  node(label: 'io-publish') {
+
+    def serviceName
+    def serviceSelector
+    def additionalHelmArgs
+
+    container('helm') {
+      stage('\u27A1 Get Current Service Name') {
+        serviceName = getHelmServiceName(name: "test")
+      }
+    }
+
+    container('kubectl') {
+      stage('\u27A1 Fetch Current Service Selector "app"') {
+        serviceSelector = getHelmServiceSelector(name: "${serviceName}", namespace: 'default')
+        additionalHelmArgs = ""
+      }
+    }
+
+    container('helm') {
+      stage('\u27A1 Deployment') {
+        println "Running dry-run deployment with: ${additionalHelmArgs}"
+      }
+    }
+
+  }
+}
+
+
+def getHelmServiceName(Map args) {
+  return sh (
+    script: "echo \"production-instance\"",
+    returnStdout: true
+    ).trim()
+}
+
+def getHelmServiceSelector(Map args) {
+  return sh (
+    script: "echo \"testing\"",
+    returnStdout: true
+    ).trim()
+}
