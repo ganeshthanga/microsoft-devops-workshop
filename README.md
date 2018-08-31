@@ -70,7 +70,7 @@ by Jerry Meisner and Christoph Champ for Redapt, Inc. (August 2018)
    9. [Revisiting Section 2.3.4 .NET Core - ReactJS](03_kubernetes_aks/09_revisiting_netcore_react)
       1. [Setting Up Redis](03_kubernetes_aks/09_revisiting_netcore_react/01_setting_up_redis.md)
       2. [Setting Up Our Web App](03_kubernetes_aks/09_revisiting_netcore_react/02_setting_up_our_web_app.md)
-4. Pipelines
+4. [Pipelines](04_pipelines)
    1. [Helm](04_pipelines/01_helm)
       1. [Install Helm](04_pipelines/01_helm/01_install_helm.md)
       2. [Reading Charts](01_helm/02_reading_charts.md)
