@@ -45,6 +45,7 @@ by Jerry Meisner and Christoph Champ for Redapt, Inc. (August 2018)
       2. AKS
       3. [kubectl](03_kubernetes_aks/03_standing_up_your_first_cluster/03_kubectl.md)
       4. [Labels, Selectors, and Annotations](03_kubernetes_aks/03_standing_up_your_first_cluster/04_labels_selectors_annotations.md)
+      5. [Private Repo Image Pull Secrets](03_kubernetes_aks/03_standing_up_your_first_cluster/05_private_repo_image_pull_secrets.md)
    4. [Deploying Stateless Applications](03_kubernetes_aks/04_deploying_stateless_apps)
       1. [Deployments](03_kubernetes_aks/04_deploying_stateless_apps/01_deployments.md)
       2. [Jobs](03_kubernetes_aks/04_deploying_stateless_apps/02_jobs.md)

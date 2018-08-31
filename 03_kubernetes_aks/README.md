@@ -39,6 +39,7 @@ Because you won't have access to the nodes running etcd and the api, there are s
    2. AKS
    3. [kubectl](03_standing_up_your_first_cluster/03_kubectl.md)
    4. [Labels, Selectors, and Annotations](03_standing_up_your_first_cluster/04_labels_selectors_annotations.md)
+   5. [Private Repo Image Pull Secrets](03_standing_up_your_first_cluster/05_private_repo_image_pull_secrets.md)
 4. [Deploying Stateless Applications](04_deploying_stateless_apps)
    1. [Deployments](04_deploying_stateless_apps/01_deployments.md)
    2. [Jobs](04_deploying_stateless_apps/02_jobs.md)
