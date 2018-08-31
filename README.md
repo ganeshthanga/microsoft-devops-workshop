@@ -50,7 +50,7 @@ by Jerry Meisner and Christoph Champ for Redapt, Inc. (August 2018)
       3. [DaemonSets](03_kubernetes_aks/04_deploying_stateless_apps/03_daemon_sets.md)
       4. [ConfigMaps and Secrets](03_kubernetes_aks/04_deploying_stateless_apps/04_configmaps_and_secrets.md)
    5. Deploying Stateful Applications
-      1. [Volume Management](03_kubernetes_aks/04_deploying_stateful_apps/01_volume_management.md)
+      1. [Volume Management](03_kubernetes_aks/05_deploying_stateful_apps/01_volume_management.md)
       2. ELK Stack
    6. System Services
       1. Standard Kube-System Pods
