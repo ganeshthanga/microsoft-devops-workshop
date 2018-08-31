@@ -52,7 +52,7 @@ by Jerry Meisner and Christoph Champ for Redapt, Inc. (August 2018)
       3. [DaemonSets](03_kubernetes_aks/04_deploying_stateless_apps/03_daemon_sets.md)
       4. [ConfigMaps and Secrets](03_kubernetes_aks/04_deploying_stateless_apps/04_configmaps_and_secrets.md)
       5. [Revisiting our .NET Core - ReactJS example](03_kubernetes_aks/04_deploying_stateless_apps/05_revisiting_netcore_react.md)
-   5. Deploying Stateful Applications
+   5. [Deploying Stateful Applications](03_kubernetes_aks/05_deploying_stateful_apps)
       1. [Volume Management](03_kubernetes_aks/05_deploying_stateful_apps/01_volume_management.md)
       2. [Stateful Sets](03_kubernetes_aks/05_deploying_stateful_apps/02_stateful_sets.md)
    7. [Ingress / Traffic Routing](03_kubernetes_aks/07_ingress_traffic_management)
