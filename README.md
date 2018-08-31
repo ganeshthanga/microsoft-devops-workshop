@@ -72,10 +72,12 @@ by Jerry Meisner and Christoph Champ for Redapt, Inc. (August 2018)
 4. Pipelines
    1. [Helm](04_pipelines/01_helm)
       1. [Install Helm](04_pipelines/01_helm/01_install_helm.md)
-      2. [State Metrics](https://github.com/helm/charts/tree/master/stable/kube-state-metrics)
-      3. [Ingress Controller](https://github.com/helm/charts/tree/master/stable/nginx-ingress)
-      4. [ELK Stack (Logging)](https://github.com/helm/charts/tree/master/stable/fluentd-elasticsearch)
-      5. [Jenkins Stack](https://github.com/helm/charts/tree/master/stable/jenkins)
+      2. [Reading Charts](01_helm/02_reading_charts.md)
+      3. [Creating Charts](01_helm/03_creating_charts.md)
+      4. [State Metrics](https://github.com/helm/charts/tree/master/stable/kube-state-metrics)
+      5. [Ingress Controller](https://github.com/helm/charts/tree/master/stable/nginx-ingress)
+      6. [ELK Stack (Logging)](https://github.com/helm/charts/tree/master/stable/fluentd-elasticsearch)
+      7. [Jenkins Stack](https://github.com/helm/charts/tree/master/stable/jenkins)
    2. Jenkins on K8s
    3. Containers as a Build Artifact / Promoting Builds
    4. Integration Testing Micro-Services
