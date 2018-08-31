@@ -123,8 +123,8 @@ spec:
 
 ## Common
 
-`kubectl get ss`
+`kubectl get statefulsets`
 
-`kubectl describe ss nginx`
+`kubectl describe statefulsets nginx`
 
 `kubectl get pods`
