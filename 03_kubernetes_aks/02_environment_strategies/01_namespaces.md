@@ -49,7 +49,9 @@ kube-system   Active    7d
 However, this is not a good way of creating Namespaces, as all of the commands you typed in the CLI to create the Namespace a lost in your history and their is no revision/version control.
 
 * Delete the above Namespace
+```
 $ kubectl delete namespace dev
+```
 
 A much better way of creating a Namespace (like any other object in Kubernetes) is to create a YAML file and store that in a repository (e.g., GitHub):
 ```
@@ -127,6 +129,7 @@ Context "dev" created.
 
 $ kubectl config set-context prod --namespace=prod --cluster=minikube --user=minikube
 Context "prod" created.
+```
 
 By default, the above commands adds two contexts that are saved into file .kube/config. You can now view the contexts and alternate against the two new request contexts depending on which namespace you wish to work against.
 
