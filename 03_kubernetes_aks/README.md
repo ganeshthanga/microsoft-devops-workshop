@@ -29,9 +29,10 @@ Because you won't have access to the nodes running etcd and the api, there are s
    5. [Primitives (Deployments / Services / Pods / etc)](01_overview/05_k8s_primitives.md)
    6. [RBAC / Service Accounts](01_overview/06_rbac.md)
 2. [Environment Strategies (NonProd/Prod vs Dev/Test/Cert/Prod)](02_environment_strategies)
-   1. [Environments](02_environment_strategies/01_environments.md)
-   2. [Service Discovery / KubeDNS](02_environment_strategies/02_service_discovery.md)
-   3. [Workloads](02_environment_strategies/03_workloads.md)
+   1. [Namespaces](02_environment_strategies/01_namespaces.md)
+   2. [Environments](02_environment_strategies/02_environments.md)
+   3. [Service Discovery / KubeDNS](02_environment_strategies/03_service_discovery.md)
+   4. [Workloads](02_environment_strategies/04_workloads.md)
 3. [Standing up your First Cluster](03_standing_up_your_first_cluster)
    1. [Minikube (Local)](03_standing_up_your_first_cluster/01_minikube.md)
    2. AKS

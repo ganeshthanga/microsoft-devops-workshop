@@ -4,6 +4,7 @@ With the new service offerings and installation tools, it has become increasingl
 
 ## Table of Contents
 
-1. [Environments](01_environments.md)
-2. [Service Discovery / KubeDNS](02_service_discovery.md)
-3. [Workloads](03_workloads.md)
+1. [Namespaces](01_namespaces.md)
+2. [Environments](02_environments.md)
+3. [Service Discovery / KubeDNS](03_service_discovery.md)
+4. [Workloads](04_workloads.md)
