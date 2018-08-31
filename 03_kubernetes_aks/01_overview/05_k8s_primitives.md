@@ -83,7 +83,7 @@ The CronJobs controller functions similarly to cron jobs that you may be familia
 A Service is an abstraction on top of Pods, which provides a single IP address and DNS name by which the Pods can be accessed. This load balancing configuration is much easier to manage and helps scale Pods seamlessly.
 Kubernetes can then provide service discovery and handle routing with the static IP for each pod as well as load balancing (round-robin based) connections to that service among the pods that match the label selector indicated.
 
-There are 3 types of Services, each including all of their primitive counterparts building up to `LoadBalancer`.
+There are 3 types of services each more complex than the last, building up to `LoadBalancer`.
 
 1. ClusterIP - This results in a local ip that can be reached by other pods within the cluster only.
 2. NodePort - Includes a ClusterIP, but also creates an iptable rule on each node, at a designated port per service with this type, to allow external traffic.
