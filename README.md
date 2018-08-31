@@ -38,7 +38,7 @@ by Jerry Meisner and Christoph Champ for Redapt, Inc. (August 2018)
       1. [Environments](03_kubernetes_aks/02_environment_strategies/01_environments.md)
       2. [Service Discovery / KubeDNS](03_kubernetes_aks/02_environment_strategies/02_service_discovery.md)
       3. [Workloads](03_kubernetes_aks/02_environment_strategies/03_workloads.md)
-   3. Standing up your First Cluster
+   3. [Standing up your First Cluster](03_kubernetes_aks/03_standing_up_your_first_cluster)
       1. [Minikube (Local)](03_kubernetes_aks/03_standing_up_your_first_cluster/01_minikube.md)
       2. AKS
       3. [kubectl](03_kubernetes_aks/03_standing_up_your_first_cluster/03_kubectl.md)
