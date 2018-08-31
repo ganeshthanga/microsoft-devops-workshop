@@ -11,3 +11,24 @@ Even when JVM is running in a docker container, it starts threads and consumes m
 
 ## The Solution
 The solution that generally resolves this problem is to specify `-XMX` `-XX:ParallelGCThreads` and `-XX:ConcGCThreads` as part of the JVM commands. In docker, you can ovveride the command and add these flags to it at run time. The same principle applies when deploying workloads to orchestrators like Kubernetes.
+
+## Dockerfile w/ External Build Process
+
+https://spring.io/guides/gs/spring-boot-docker/
+```
+FROM openjdk:8-jdk-alpine
+VOLUME /tmp
+ARG JAR_FILE
+COPY ${JAR_FILE} app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
+```
+
+
+`docker build . -t your-tag:version --build-arg JAR_FILE=/local/path/to/your/built.jar`
+
+`docker run your-tag:version java -jar /app.jar -XMX256m`
+
+
+## Options
+
+If you want to also build you Jar inside of the container, you can follow a similar pattern as the netcore_reacy Dockerfile, using this FROM image, and installing your build dependencies inside of the `build` image, and ultimate copy it into the lightweight section similar to the Dockerfile defined above.

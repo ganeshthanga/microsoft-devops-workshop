@@ -6,7 +6,7 @@ by Jerry Meisner and Christoph Champ for Redapt, Inc. (August 2018)
 ## Table of Contents
 
 1. [Introduction](01_introduction)
-1. [Docker](02_docker)
+2. [Docker](02_docker)
    1. [Overview](02_docker/01_overview)
       1. [Benefits of Containers](02_docker/01_overview/01_benefits_of_containers.md)
       2. [Install Docker](02_docker/01_overview/02_install_docker.md)
@@ -26,7 +26,7 @@ by Jerry Meisner and Christoph Champ for Redapt, Inc. (August 2018)
        4. [.NET Core - ReactJS](02_docker/03_containerization/04_netcore_react.md)
        5. [Java Spring Boot](02_docker/03_containerization/05_java_spring.md)
        6. [Windows Containers](02_docker/03_containerization/06_windows.md)
-2. [Kubernetes / AKS](03_kubernetes_aks)
+3. [Kubernetes / AKS](03_kubernetes_aks)
    1. [Overview / Moving Parts](03_kubernetes_aks/01_overview)
       1. [ETCD](03_kubernetes_aks/01_overview/01_etcd.md)
       2. [Kubernetes API](03_kubernetes_aks/01_overview/02_kubernetes_api.md)
@@ -52,21 +52,28 @@ by Jerry Meisner and Christoph Champ for Redapt, Inc. (August 2018)
       5. [Revisiting our .NET Core - ReactJS example](03_kubernetes_aks/04_deploying_stateless_apps/05_revisiting_netcore_react.md)
    5. Deploying Stateful Applications
       1. [Volume Management](03_kubernetes_aks/05_deploying_stateful_apps/01_volume_management.md)
-      2. ELK Stack
+      2. [Stateful Sets](03_kubernetes_aks/05_deploying_stateful_apps/02_stateful_sets.md)
+   7. Ingress / Traffic Routing
+      1. Defining Services (ClusterIP / NodePort / LoadBalancer)
+      2. [Ingress Controllers / Rules](03_kubernetes_aks/07_ingress_traffic_management/02_ingress_controllers_rules.md)
    6. System Services
       1. Standard Kube-System Pods
       2. Third Party Add-Ons (Datadog, Helm)
       3. Developing from Scratch
-   7. Ingress / Traffic Routing
-      1. Defining Services (ClusterIP / NodePort / LoadBalancer)
-      2. [Ingress Controllers / Rules](03_kubernetes_aks/07_ingress_traffic_management/02_ingress_controllers_rules.md)
    8. Auto-Scaling / SRE
       1. Resources (Limits / Requests)
       2. Horizontal Pod Autoscaling
       3. Cluster Scaling
       4. Liveness / Readiness Probes
-3. Pipelines
-   1. Jenkins
-   2. Containers as a Build Artifact / Promoting Builds
-   3. Helm
+   9. [Revisiting Section 2.3.4 .NET Core - ReactJS](03_kubernetes_aks/09_revisiting_netcore_react)
+      1. [Setting Up Redis](03_kubernetes_aks/09_revisiting_netcore_react/01_setting_up_redis.md)
+      2. [Setting Up Our Web App](03_kubernetes_aks/09_revisiting_netcore_react/02_setting_up_our_web_app.md)
+4. Pipelines
+   1. Helm
+      1. [State Metrics](https://github.com/helm/charts/tree/master/stable/kube-state-metrics)
+      2. [Ingress Controller](https://github.com/helm/charts/tree/master/stable/nginx-ingress)
+      3. [ELK Stack (Logging)](https://github.com/helm/charts/tree/master/stable/fluentd-elasticsearch)
+      4. [Jenkins Stack](https://github.com/helm/charts/tree/master/stable/jenkins)
+   2. Jenkins on K8s
+   3. Containers as a Build Artifact / Promoting Builds
    4. Integration Testing Micro-Services

@@ -1,12 +1,6 @@
-# Revisiting our .NET Core - ReactJS example
+# Setting Up Our Web App (Favorite Beer)
 
-With some understanding of the primitives, we can take the application we built in the containerization section and deploy it to our cluster.
-
-Our application stack includes two microservices. 
-1. Our .NET Core app (The image has been publicly staged on docker hub at `redaptcloud/favorite-beer:v1`)
-2. The redis data store.
-
-The first microservice in our stack is a stateless service. We want to be able to scale this independently, in other words launch as many pods as necessary, to handle our load. The best Kubernetes primitive to choose for this scenario is a `Deployment`, which will manage `ReplicationController`s for each rollout, which will manage the number of pods we have running.
+The second microservice in our stack is a stateless service. We want to be able to scale this independently, in other words launch as many pods as necessary, to handle our load. The best Kubernetes primitive to choose for this scenario is a `Deployment`, which will manage `ReplicationController`s for each rollout, which will manage the number of pods we have running.
 
 We can map our understanding of the docker-compose.yml we developed in our local environment, to our understanding of this primitive in Kubernetes.
 
@@ -81,9 +75,8 @@ Notable Differences:
 2. The containers section is populated from the `voting` section, with `image` replacing `build`
 3. `depends_on` is a docker-compose construct, that is excluded, but considered during deployment strategy. It tells us we will need to deploy our redis endpoint first, when we actually apply this to Kubernetes.
 4. `environment` becomes `env` under the containers spec, and takes a different input format.
-5. We have defined `REDIS_HOST` as `favorite-beer-redis`, because we will use a service primitive with the same name to expose redis to our deployment, when we deploy redis.
+5. We have defined `REDIS_HOST` as `favorite-beer-redis`, as this is the `Service` name for our redis deployment, in the last section.
 6. `ports` becomes more defined, since we prefer to name ports in Kubernetes, and we have more options available.
-
 
 ## Configuration
 
@@ -105,6 +98,8 @@ data:
       }
     }
 ```
+
+`kubectl apply -f favorite-beer-configmap.yml`
 
 We can then add to and reference this in our previous deployment.
 `favorite-beer-deployment.yml`
@@ -147,6 +142,8 @@ spec:
             name: favorite-beer
 ```
 
+`kubectl apply -f favorite-beer-deployment.yml`
+
 What is happening here:
 1. We define a volume in the volumes section called `favorite-beer-config-volume` which is referencing our `configMap` by name `favorite-beer`.
 2. We are creating a mount to the container in the `volumeMounts` section, referencing the volume we defined, and the path within the container we want to mount to.
@@ -157,10 +154,6 @@ Later when this app is deployed to Kubernetes, we will deploy `favorite-beer-con
 ## Exposing this Deployment
 
 Since this is a service that recieve traffic internally or otherwise over the net, we will need to expose an endpoint. This is where the Kubernetes `Service` comes into play. As you may remember, when we were discussing the primitives there are 3 types of services each more complex than the last, building up to `LoadBalancer`.
-
-1. ClusterIP - This results in a local ip that can be reached by other pods within the cluster only.
-2. NodePort - Includes a ClusterIP, but also creates an iptable rule on each node, at a designated port per service with this type, to allow external traffic.
-3. LoadBalancer - Typically used with CloudProviders, this provides a ClusterIP, a NodePort, and additionally creates a cloud loadbalancer attached to your nodes on that NodePort.
 
 We can define a service for our deployment. If you already have a cluster running in AKS, you can speciy `type: LoadBalancer`, however on minikube you should use `NodePort`. This process executes iptables rules on every node, in the cluster for the NodePort defined. If not defined, it will choose a random available port, within a specific range. 
 
@@ -173,6 +166,8 @@ kind: Service
 metadata:
   name: favorite-beer
 spec:
+  selector:
+    app: favorite-beer
   ports:
   - name: http
     port: 80
@@ -182,6 +177,6 @@ spec:
   type: NodePort
 ```
 
-## Continuing to Define our Stack
+`kubectl apply -f favorite-beer-service.yml`
 
-In the next section, we discuss stateful apps, and will perform similar operations for redis.
+You should now be able to hit your any of your node ip addresses, on that port, and see the application being served.
