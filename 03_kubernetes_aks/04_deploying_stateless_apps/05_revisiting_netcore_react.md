@@ -1,4 +1,4 @@
-# Revisiting .NET Core ReactJS
+# Revisiting our .NET Core - ReactJS example
 
 With some understanding of the primitives, we can take the application we built in the containerization section and deploy it to our cluster.
 
