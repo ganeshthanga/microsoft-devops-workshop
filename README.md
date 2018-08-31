@@ -58,7 +58,7 @@ by Jerry Meisner and Christoph Champ for Redapt, Inc. (August 2018)
       3. Developing from Scratch
    7. Ingress / Traffic Routing
       1. Defining Services (ClusterIP / NodePort / LoadBalancer)
-      2. Ingress Controllers / Rules
+      2. [Ingress Controllers / Rules](03_kubernetes_aks/07_ingress_traffic_management/02_ingress_controllers_rules.md)
    8. Auto-Scaling / SRE
       1. Resources (Limits / Requests)
       2. Horizontal Pod Autoscaling
