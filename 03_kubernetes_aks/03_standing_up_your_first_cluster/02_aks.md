@@ -15,3 +15,36 @@ In this section, we will walk through setting up an AKS cluster, which you can u
 1. Log into the Azure Portal Dashboard
 2. Click Services in the top left corner.
 	- ![image_01](aks_images/image_01.png)
+3. Search for `aks` and Select AKS.
+	- ![image_02](aks_images/image_02.png)
+4. Click the `Add` button to create a new Cluster.
+	- ![image_03](aks_images/image_03.png)
+5. Fill in appropriate information for the Basic Tab
+	- ![image_04](aks_images/image_04.png)
+	- ![image_05](aks_images/image_05.png)
+6. Fill in the appropriate information for the Authentication Tab
+	- ![image_06](aks_images/image_06.png)
+6. Fill in the appropriate information for the Networking Tab
+	- ![image_07](aks_images/image_07.png)
+6. Fill in the appropriate information for the Monitoring Tab
+	- ![image_08](aks_images/image_08.png)
+7. Add any tags, you feel may be appropriate in the Tags Tab.
+8. Click "Review + Create" Tab and then Click "Create"
+	- ![image_09](aks_images/image_09.png)
+9. This can take about 30-45 minutes to complete, and you should be able to see your cluster.
+	- ![image_10](aks_images/image_10.png)
+10. Click on your cluster, and in the Overview Tab, click "View Kubernetes Dashboard".
+11. In your command line, type `az login` and follow the instructions.
+12. Run `az aks install-cli` to install `kubectl` into your local environment.
+13. Run `az aks get-credentials` with your flags to set the kubectl context.
+
+
+## Validate
+
+After performing the steps above, you should be able to run the following command, and see some Pods running.
+
+`kubectl get pods --all-namespaces`
+
+## Continuing
+
+The next sections wll explain kubectl, and give you a chance to flex some of these actions against your AKS cluster.
