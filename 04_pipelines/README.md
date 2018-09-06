@@ -20,5 +20,5 @@ We will also cover Jenkins, Immutable Builds, and Integration testing, to close 
    1. [Install Jenkins](02_jenkins/01_install_jenkins.md)
    2. [Test Pipeline](02_jenkins/02_test_pipeline.md)
    3. [Building an App](02_jenkins/03_building_an_app.md)
-3. Containers as a Build Artifact / Promoting Builds
-4. Integration Testing Microservices
+3. [Containers as a Build Artifact / Promoting Builds](03_containers_as_build_artifacts.md)
+4. [Integration Testing Microservices](04_integration_testing_microservices.md)

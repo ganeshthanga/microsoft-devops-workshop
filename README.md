@@ -83,5 +83,5 @@ by Jerry Meisner and Christoph Champ for Redapt, Inc. (August 2018)
       1. [Install Jenkins](04_pipelines/02_jenkins/01_install_jenkins.md)
       2. [Test Pipeline](04_pipelines/02_jenkins/02_test_pipeline.md)
       3. [Building an App](04_pipelines/02_jenkins/03_building_an_app.md)
-   3. Containers as a Build Artifact / Promoting Builds
-   4. Integration Testing Micro-Services
+   3. [Containers as a Build Artifact / Promoting Builds](04_pipelines/03_containers_as_build_artifacts.md)
+   4. [Integration Testing Microservices](04_pipelines/04_integration_testing_microservices.md)
