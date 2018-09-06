@@ -45,6 +45,23 @@ After performing the steps above, you should be able to run the following comman
 
 `kubectl get pods --all-namespaces`
 
+## Enabling SSH
+
+We will follow the azure docs for getting ssh access.
+
+https://docs.microsoft.com/en-us/azure/aks/ssh
+
+## Install Latest Version of Docker (Required for Automated Builds in Section 4)
+Once you are onto a worker node, run the following commands to upgrade docker to `17.05.*`
+
+You will need to do this on every node, in your cluster.
+
+```
+sudo vi /etc/apt/preferences.d/docker.pref
+sudo apt-get update
+sudo apt-get install -y docker-engine
+```
+
 ## Continuing
 
 The next sections wll explain kubectl, and give you a chance to flex some of these actions against your AKS cluster.
