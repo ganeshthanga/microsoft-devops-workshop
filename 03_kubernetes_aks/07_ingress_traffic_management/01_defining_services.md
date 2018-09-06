@@ -12,6 +12,8 @@ There are 3 types of services each more complex than the last, building up to `L
 3. __LoadBalancer__ - Typically used with CloudProviders, this provides a ClusterIP, a NodePort, and additionally creates a cloud loadbalancer attached to your nodes on that NodePort.
 ![LoadBalancer](img/service_-_loadbalancer.png)
 
+## Examples
+
 The following examples can be copied into local files, and applied via `kubectl apply -f <filename>`.
 
 __Example Service #1__:
@@ -28,6 +30,12 @@ spec:
   - protocol: TCP
     port: 80
     targetPort: 9376
+```
+
+```
+$ kubectl apply -f my-service1.yml
+$ kubectl get svc my-service1 -o yaml
+$ kubectl describe svc my-service1
 ```
 
 __Example Service #2__:
@@ -65,11 +73,6 @@ spec:
     nodePort: 31560
   type: LoadBalancer
 ```
-
-
-`kubectl get svc my-service1 -o yaml`
-
-`kubectl describe svc my-service1`
 
 ### Cleanup
 
