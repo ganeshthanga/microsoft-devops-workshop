@@ -54,11 +54,12 @@ Because you won't have access to the nodes running etcd and the api, there are s
 7. [Ingress / Traffic Routing](07_ingress_traffic_management)
    1. [Defining Services (ClusterIP / NodePort / LoadBalancer)](07_ingress_traffic_management/01_defining_services.md)
    2. [Ingress Controllers / Rules](07_ingress_traffic_management/02_ingress_controllers_rules.md)
-8. Auto-Scaling / SRE
-   1. Resources (Limits / Requests)
-   2. Horizontal Pod Autoscaling
-   3. Cluster Scaling
-   4. Liveness / Readiness Probes
+8. [Auto-Scaling / SRE](08_autoscaling_sre)
+   1. [Resources (Limits / Requests)](08_autoscaling_sre/01_resources.md)
+   2. [NodeSelector/Affinity/Anti-Affinity](08_autoscaling_sre/02_selector_affinity_antiaffinity.md)
+   3. [Liveness / Readiness Probes](08_autoscaling_sre/03_readiness_liveness.md)
+   4. [Horizontal Pod Autoscaling](08_autoscaling_sre/04_horizontal_pod_autoscaler.md)
+   5. [Cluster Scaling](08_autoscaling_sre/05_cluster_autoscaler.md)
 9. [Revisiting Section 2.3.4 .NET Core - ReactJS](09_revisiting_netcore_react)
    1. [Setting Up Redis](09_revisiting_netcore_react/01_setting_up_redis.md)
    2. [Setting Up Our Web App](09_revisiting_netcore_react/02_setting_up_our_web_app.md)
