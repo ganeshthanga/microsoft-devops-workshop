@@ -6,12 +6,15 @@ Kubernetes can then provide service discovery and handle routing with the static
 There are 3 types of services each more complex than the last, building up to `LoadBalancer`.
 
 1. ClusterIP [Default] - This results in a local ip that can be reached by other pods within the cluster only, end result is round robin traffic delivery.
+![ClusterIP](img/service_-_clusterip.png)
 2. NodePort - Includes a ClusterIP, but also creates an iptable rule on each node, at a designated port per service with this type, to allow external traffic.
+![NodePort](img/service_-_nodeport.png)
 3. LoadBalancer - Typically used with CloudProviders, this provides a ClusterIP, a NodePort, and additionally creates a cloud loadbalancer attached to your nodes on that NodePort.
+![LoadBalancer](service_-_loadbalancer.png)
 
 The following examples can be copied into local files, and applied via `kubectl apply -f <filename>`.
 
-Example Service #1:
+__Example Service #1__:
 
 ```
 kind: Service
@@ -27,7 +30,7 @@ spec:
     targetPort: 9376
 ```
 
-Example Service #2:
+__Example Service #2__:
 
 ```
 kind: Service
@@ -45,7 +48,7 @@ spec:
   type: NodePort
 ```
 
-Example Service #3: (Only works correctly with Cloud Provider K8s clusters such as AKS, not Minikube.)
+__Example Service #3__: (Only works correctly with Cloud Provider K8s clusters such as AKS, not Minikube.)
 
 ```
 kind: Service
@@ -70,7 +73,8 @@ spec:
 
 ### Cleanup
 
-`kubectl get svc`
-
-`kubectl delete svc <svc_name>`
+```
+$ kubectl get svc
+$ kubectl delete svc <svc_name>
+```
 
