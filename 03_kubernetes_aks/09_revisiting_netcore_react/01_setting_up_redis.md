@@ -228,10 +228,10 @@ spec:
   selector:
     app: favorite-beer-redis
   ports:
-  - name: http
-    port: 80
+  - name: redis
+    port: 6379
     protocol: TCP
-    targetPort: 80
+    targetPort: 6379
   type: ClusterIP
 ```
 

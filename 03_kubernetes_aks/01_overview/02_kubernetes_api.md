@@ -20,15 +20,6 @@ If etcd is no longer running, you should start it up first, so that our api will
 docker run -p 6443:6443 -p 8080:8080 -d --name k8s-api gcr.io/google_containers/hyperkube:v1.11.1 /hyperkube apiserver --service-cluster-ip-range=172.17.17.1/24 --insecure-bind-address=0.0.0.0 --advertise-address=${HostIP} --token-auth-file=/dev/null --address=127.0.0.1 --etcd-servers=http://${HostIP}:2379  --v 2
 ```
 
-*Open your local browser or `curl -k` to `https://${HostIP}:6443/`
-
-If you are in the browser, you can simply navigate to `/swagger-ui` and you will be presented with the docs in swagger format.
-
-In the event you are using curl, you can see similar text from the output returned here:
-`curl -k https://${HostIP}:6443/swaggerapi/api/v1/`
-
-The `ui` endpoint, is a special designation, that gets used later when the cluster has certain cluster services running. It makes use of a primitive called an `Endpoint`, which we will discuss later. ie: `curl -Lk https://${HostIP}:6443/ui`
-
 ### kubectl
 
 We can use the `kubectl` tool to interact with the Kubernetes API server. Normally, you would run `kubectl` locally, and configure the client to connect to the cluster, but for our demonstration purposes, we can exec into the container, and use its local unauthenticated access. We can exec in and check the current set of Namespaces, one of the Kubernetes primitives, that acts as a logical grouping.

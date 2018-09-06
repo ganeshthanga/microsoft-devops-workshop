@@ -1,6 +1,6 @@
 # Horizontal Pod Auto Scaler
 
-HPA is a Kubernetes primitive, that define cpu thresholds for automatically, horizontally scaling pods. In order for this to function correctly, the [default metrics server](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/instrumentation/metrics-server.md) must be deployed, to act as the data source.
+HPA is a Kubernetes primitive, that define cpu thresholds for automatically, horizontally scaling pods. In order for this to function correctly, the [default metrics server](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/instrumentation/metrics-server.md) must be deployed, to act as the data source. In AKS, this is already deployed for you, when you create your cluster.
 
 ![horizontal-pod-autoscaler](images/horizontal-pod-autoscaler.svg)
 
