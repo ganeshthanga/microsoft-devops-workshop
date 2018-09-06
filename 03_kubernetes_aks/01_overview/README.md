@@ -1,6 +1,6 @@
 # Kubernetes Overview
 
-<Architecture Image - Placeholder>
+![Kubernetes Architecture](img/k8s_architecture_diagram.png)
 
 ## Table of Contents
 
