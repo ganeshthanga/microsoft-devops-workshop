@@ -12,3 +12,12 @@ As a helm chart developer the best place to go for information related to buildi
 https://docs.helm.sh/chart_template_guide/#the-chart-template-developer-s-guide
 
 There you will find information about template functions, values files, built in objects, debugging, etc.
+
+
+## Lets Revisit our Netcore ReactJs App
+
+We have defined a chart in the app code repo, which can be updated with the code, and chart changes can be rolled out simultaneously. 
+
+Discuss resources included, and the templating that is occurring in this iteration.
+
+https://github.com/redapt/favorite-beer/tree/master/spa-react-netcore-redis/voting/voting/k8s
