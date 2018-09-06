@@ -1,6 +1,6 @@
 # Revisiting Section 2.3.4 .NET Core - ReactJS
 
-[Recall](../../02_docker/03_containerization/04_netcore_react.md)
+Recall: [.NET Core - ReactJS](../../02_docker/03_containerization/04_netcore_react.md)
 
 With some understanding of the primitives, we can take the application we built in the containerization section and deploy it to our cluster.
 
