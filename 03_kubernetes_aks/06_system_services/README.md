@@ -6,4 +6,4 @@ With some know-how, you can also develop your own cluster services, for custom n
 
 ## Table of Contents
 1. [Standard Kube-System Pods](01_standard_kube_system_pods.md)
-2. [Third Party Add-Ons (Datadog, Helm)](02_third_part_addons.md)
+2. [Third Party Add-Ons (Datadog, Helm)](02_third_party_addons.md)
