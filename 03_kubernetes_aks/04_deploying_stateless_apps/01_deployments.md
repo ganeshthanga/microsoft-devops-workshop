@@ -6,6 +6,8 @@ You describe a desired state in a Deployment object, and the Deployment controll
 
 ## Creating a Deployment
 
+![Deployment](img/deployment_simple.png)
+
 The following is an example of a Deployment. It creates a ReplicaSet to bring up three [Nginx](https://hub.docker.com/_/nginx/) Pods:
 ```
 apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
@@ -137,6 +139,8 @@ nginx-deployment-75675f5897-wvvgh   1/1       Running   0          3m        172
 ```
 
 ## Updating a Deployment
+
+![Deployment Update](img/deployment_update.png)
 
 Note: A Deployment's rollout is triggered if, and only if, the Deployment's pod template (that is, `.spec.template`) is changed (for example, if the labels or container images of the template are updated). Other updates, such as scaling the Deployment, do not trigger a rollout.
 
