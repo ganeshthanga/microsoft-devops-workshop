@@ -42,7 +42,7 @@ by Jerry Meisner and Christoph Champ for Redapt, Inc. (August 2018)
       4. [Workloads](03_kubernetes_aks/02_environment_strategies/04_workloads.md)
    3. [Standing up your First Cluster](03_kubernetes_aks/03_standing_up_your_first_cluster)
       1. [Minikube (Local)](03_kubernetes_aks/03_standing_up_your_first_cluster/01_minikube.md)
-      2. AKS
+      2. [AKS](03_standing_up_your_first_cluster/02_aks.md)
       3. [kubectl](03_kubernetes_aks/03_standing_up_your_first_cluster/03_kubectl.md)
       4. [Labels, Selectors, and Annotations](03_kubernetes_aks/03_standing_up_your_first_cluster/04_labels_selectors_annotations.md)
       5. [Private Repo Image Pull Secrets](03_kubernetes_aks/03_standing_up_your_first_cluster/05_private_repo_image_pull_secrets.md)
@@ -58,10 +58,9 @@ by Jerry Meisner and Christoph Champ for Redapt, Inc. (August 2018)
    7. [Ingress / Traffic Routing](03_kubernetes_aks/07_ingress_traffic_management)
       1. [Defining Services (ClusterIP / NodePort / LoadBalancer)](03_kubernetes_aks/07_ingress_traffic_management/01_defining_services.md)
       2. [Ingress Controllers / Rules](03_kubernetes_aks/07_ingress_traffic_management/02_ingress_controllers_rules.md)
-   6. System Services
-      1. Standard Kube-System Pods
-      2. Third Party Add-Ons (Datadog, Helm)
-      3. Developing from Scratch
+   6. [System Services](06_system_services)
+      1. [Standard Kube-System Pods](06_system_services/01_standard_kube_system_pods.md)
+      2. [Third Party Add-Ons (Datadog, Helm)](06_system_services/02_third_part_addons.md)
    8. Auto-Scaling / SRE
       1. Resources (Limits / Requests)
       2. Horizontal Pod Autoscaling

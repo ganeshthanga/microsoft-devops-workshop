@@ -32,5 +32,3 @@ The most common operations that a user might encounter with the kubelet, is the 
 K8s Documentation: https://kubernetes.io/docs/reference/command-line-tools-reference/kube-proxy/
 
 The Kubernetes network proxy runs on each node. This reflects workloads on each node and can do simple stream forwarding or round robin forwarding across a set of backends. There is an optional addon that provides cluster DNS for these cluster IPs. The user must create a service with the apiserver API to configure the proxy.
-
-In the networking section, the role of the proxy will become more clear.

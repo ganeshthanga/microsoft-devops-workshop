@@ -36,7 +36,7 @@ Because you won't have access to the nodes running etcd and the api, there are s
    4. [Workloads](02_environment_strategies/04_workloads.md)
 3. [Standing up your First Cluster](03_standing_up_your_first_cluster)
    1. [Minikube (Local)](03_standing_up_your_first_cluster/01_minikube.md)
-   2. AKS
+   2. [AKS](03_standing_up_your_first_cluster/02_aks.md)
    3. [kubectl](03_standing_up_your_first_cluster/03_kubectl.md)
    4. [Labels, Selectors, and Annotations](03_standing_up_your_first_cluster/04_labels_selectors_annotations.md)
    5. [Private Repo Image Pull Secrets](03_standing_up_your_first_cluster/05_private_repo_image_pull_secrets.md)
@@ -51,7 +51,6 @@ Because you won't have access to the nodes running etcd and the api, there are s
 6. System Services
    1. Standard Kube-System Pods
    2. Third Party Add-Ons (Datadog, Helm)
-   3. Developing from Scratch
 7. [Ingress / Traffic Routing](07_ingress_traffic_management)
    1. [Defining Services (ClusterIP / NodePort / LoadBalancer)](07_ingress_traffic_management/01_defining_services.md)
    2. [Ingress Controllers / Rules](07_ingress_traffic_management/02_ingress_controllers_rules.md)
