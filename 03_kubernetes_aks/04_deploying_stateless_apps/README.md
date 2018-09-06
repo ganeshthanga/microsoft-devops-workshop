@@ -2,6 +2,8 @@
 
 We touch on Kubernetes primitives in this section leading up to deploying an example, these primitives are not limited to stateless services, but are generally used for them more often.
 
+![workloads_to_pod](img/workloads_to_pod.png)
+
 ## Table of Contents
 
 1. [Deployments](01_deployments.md)
