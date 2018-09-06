@@ -28,6 +28,8 @@ A Pod is the smallest and simplest Kubernetes object. It is the unit of deployme
 
 Pods are ephemeral in nature, and they do not have the capability to self-heal by themselves. That is why we use them with controllers, which can handle a Pod's replication, fault tolerance, self-heal, etc. We attach the Pod's specification to other objects using Pod Templates.
 
+![Pods](img/pods.png)
+
 #### Controllers 
 These are used in the management of your cluster. Controllers are the mechanism by which your desired configuration state is enforced.
 Controllers manage a set of pods and, depending on the desired configuration state, may engage other controllers to handle replication and scaling. It is also responsible for replacing any container in a pod that fails (based on the desired state of the cluster). Deployment, Replica Sets, StatefulSets, Daemon Sets, Jobs, and CronJobs are all different types of Kubernetes controllers. 
