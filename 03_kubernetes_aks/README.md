@@ -50,7 +50,7 @@ Because you won't have access to the nodes running etcd and the api, there are s
    2. [Stateful Sets](05_deploying_stateful_apps/02_stateful_sets.md)
 6. [System Services](06_system_services)
    1. [Standard Kube-System Pods](06_system_services/01_standard_kube_system_pods.md)
-   2. [Third Party Add-Ons (Datadog, Helm)](06_system_services/02_third_part_addons.md)
+   2. [Third Party Add-Ons (Datadog, Helm)](06_system_services/02_third_party_addons.md
 7. [Ingress / Traffic Routing](07_ingress_traffic_management)
    1. [Defining Services (ClusterIP / NodePort / LoadBalancer)](07_ingress_traffic_management/01_defining_services.md)
    2. [Ingress Controllers / Rules](07_ingress_traffic_management/02_ingress_controllers_rules.md)
