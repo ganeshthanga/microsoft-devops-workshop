@@ -38,7 +38,7 @@ $ docker exec -it k8s-api bash
 ```
 
 <hr/>
-**START**: Container Context
+START: Container Context
 
 ```
 $ kubectl get namespaces
@@ -64,8 +64,8 @@ $ kubectl create namespace test
 
 `exit` to leave the container context.
 
-__END__: Container Context
-<hr>
+END: Container Context
+<hr/>
 
 To observe that state is stored in etcd, you can stop and replace your api container.
 
