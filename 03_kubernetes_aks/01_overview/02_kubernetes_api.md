@@ -37,8 +37,8 @@ We can use the `kubectl` tool to interact with the Kubernetes API server. Normal
 $ docker exec -it k8s-api bash
 ```
 
-<hr>
-__START__: Container Context
+<hr/>
+**START**: Container Context
 
 ```
 $ kubectl get namespaces
@@ -70,7 +70,7 @@ __END__: Container Context
 To observe that state is stored in etcd, you can stop and replace your api container.
 
 ```
-% docker stop k8s-api
+$ docker stop k8s-api
 $ docker rm k8s-api
 $ docker run -p 6443:6443 -p 8080:8080 -d --name k8s-api \
     gcr.io/google_containers/hyperkube:v1.11.1 /hyperkube apiserver \
