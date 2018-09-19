@@ -1,6 +1,7 @@
 # Install Helm
 
 ## Install the Helm Cli Tools
+
 Helm comes with an additional command line tool, that functions similarly to kubectl, in that it is making calls against the kubernetes api.
 
 You can retrieve the binary for your distribution, from their git release page:
@@ -16,8 +17,8 @@ GoFish users can use `gofish install helm`.
 
 If you have RBAC enabled, and you should, you should create the following local file and then apply it.
 
-`helm-tiller-sa.yml`
 ```
+$ cat << EOF > helm-tiller-sa.yml
 apiVersion: v1
 kind: ServiceAccount
 metadata:
@@ -36,15 +37,20 @@ subjects:
   - kind: ServiceAccount
     name: tiller
     namespace: kube-system
+EOF
 ```
 
-`kubectl apply -f helm-tiller-sa.yml`
+```
+$ kubectl apply -f helm-tiller-sa.yml
+$ helm init --service-account tiller
+```
 
-`helm init --service-account tiller`
+* Miscellaneous helm commands:
 
-`helm search`
-
-`helm repo update`
+```
+$ helm search
+$ helm repo update
+```
 
 Additional commands can be gleamed from their source!
 https://docs.helm.sh/helm/#helm
