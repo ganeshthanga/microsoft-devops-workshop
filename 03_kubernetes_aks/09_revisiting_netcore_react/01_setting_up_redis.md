@@ -132,7 +132,7 @@ spec:
     spec:
       containers:
       - name: favorite-beer-redis
-        image: redaptcloud/redis:v1
+        image: redaptcloud/redis:3.2-alpine
         ports:
         - containerPort: 6379
           name: redis
@@ -188,7 +188,7 @@ spec:
     spec:
       containers:
       - name: favorite-beer-redis
-        image: redaptcloud/redis:v1
+        image: redaptcloud/redis:3.2-alpine
         ports:
         - containerPort: 6379
           name: redis
