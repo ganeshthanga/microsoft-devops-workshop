@@ -2,10 +2,11 @@
 
 The second microservice in our stack is a stateless service. We want to be able to scale this independently, in other words launch as many pods as necessary, to handle our load. The best Kubernetes primitive to choose for this scenario is a `Deployment`, which will manage `ReplicationController`s for each rollout, which will manage the number of pods we have running.
 
-We can map our understanding of the docker-compose.yml we developed in our local environment, to our understanding of this primitive in Kubernetes.
+We can map our understanding of the `docker-compose.yml` we developed in our local environment, to our understanding of this primitive in Kubernetes.
 
-docker-compose.alt.yml
 ```
+$ cat docker-compose.alt.yml
+
 version: '3.4'
 
 services:
@@ -35,8 +36,9 @@ volumes:
 
 
 Our deployment for the `voting`/`favorite-beer` app container.
-`favorite-beer-deployment.yml`
 ```
+$ cat favorite-beer-deployment.yml
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -82,10 +84,11 @@ Notable Differences:
 
 That implementation is great, if we want to use one of the servicesettings.json files that is packaged within the application. However, we exposed these things to be able to update our settings at deploy time, so we can create a deployment that uses configmaps and volume mounts with custom configuration.
 
-Consider we define a configmap that includes a servicesettings.json with a few additional beverages, that looks like this:
+Consider we define a configmap that includes a `servicesettings.json` with a few additional beverages, that looks like this:
 
-`favorite-beer-configmap.yml`
 ```
+$ cat favorite-beer-configmap.yml
+
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -97,13 +100,14 @@ data:
         "Beers": ["Red Hook", "Pyramid", "Great Divide", "New Belgium"]
       }
     }
+
+$ kubectl apply -f favorite-beer-configmap.yml
 ```
 
-`kubectl apply -f favorite-beer-configmap.yml`
-
-We can then add to and reference this in our previous deployment.
-`favorite-beer-deployment.yml`
+We can then add to and reference this in our previous deployment:
 ```
+$ cat favorite-beer-deployment.yml
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -140,9 +144,9 @@ spec:
         - name: favorite-beer-config-volume
           configMap:
             name: favorite-beer
-```
 
-`kubectl apply -f favorite-beer-deployment.yml`
+$ kubectl apply -f favorite-beer-deployment.yml
+```
 
 What is happening here:
 1. We define a volume in the volumes section called `favorite-beer-config-volume` which is referencing our `configMap` by name `favorite-beer`.
@@ -159,8 +163,9 @@ We can define a service for our deployment. If you already have a cluster runnin
 
 On AKS, with `LoadBalancer` this will additionally configure an Azure Load Balancer attached to every node in your cluster, with traffic routed to this NodePort. You could then setup your DNS servers to point to that Load Balancer, for a complete setup.
 
-`favorite-beer-service.yml`
 ```
+$ cat favorite-beer-service.yml
+
 apiVersion: v1
 kind: Service
 metadata:
@@ -174,9 +179,13 @@ spec:
     protocol: TCP
     targetPort: 80
     nodePort: 31650
-  type: NodePort
+  type: LoadBalancer
+
+$ kubectl apply -f favorite-beer-service.yml
+
+$ kubectl get svc
+NAME                  TYPE           CLUSTER-IP     EXTERNAL-IP     PORT(S)        AGE
+favorite-beer         LoadBalancer   10.0.47.83     13.64.173.174   80:31650/TCP   26m
 ```
 
-`kubectl apply -f favorite-beer-service.yml`
-
-You should now be able to hit any of your node ip addresses, on that port, and see the application being served.
+Note LoadBalancer IP (13.64.173.174) Azure assigned to the Azure Load Balancer it attached to your AKS nodes. Put that IP into your browser and you should see the "Favorite Beer" app working.
