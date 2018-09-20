@@ -13,9 +13,9 @@ In this section, we will walk through setting up an AKS cluster, which you can u
 ## Steps
 
 1. Log into the Azure Portal Dashboard
-2. Click Services in the top left corner.
+2. Click on "All services" in the top left corner.
 	- ![image_01](aks_images/image_01.png)
-3. Search for `aks` and Select AKS.
+3. Search for `aks` and select "Kubernetes services".
 	- ![image_02](aks_images/image_02.png)
 4. Click the `Add` button to create a new Cluster.
 	- ![image_03](aks_images/image_03.png)
