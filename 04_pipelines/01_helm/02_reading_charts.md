@@ -41,10 +41,10 @@ Helm has an upsert command that will install or update the release, if its prese
 `helm update --install <release name> <chart directory / repo chart> -f <values overrides>`
 
 ### Installing with default Values
-`helm update --install favorite-beer-redis stable/redis`
+`helm update --install ha-redis stable/redis`
 
 ### Installing with Custom Values
 
 You can copy the values.yaml from the chart repo to a local file called, `local-redis-values.yml`, and make customizations. Your values will be merged with the default values, prior to the interpolation step.
 
-`helm update --install favorite-beer-redis stable/redis -f local-redis-values.yml`
+`helm update --install ha-redis stable/redis -f local-redis-values.yml`

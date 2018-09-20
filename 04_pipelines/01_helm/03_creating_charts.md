@@ -22,6 +22,7 @@ Discuss resources included, and the templating that is occurring in this iterati
 
 https://github.com/redapt/favorite-beer/tree/master/spa-react-netcore-redis/voting/voting/k8s
 
+**NOTE** Redis is included in this app Chart as a single helm package, this redis example is not a true HA configuration.
 
 From this `k8s` folder in the app source code, with `helm` configured and installed to the cluster:
 
