@@ -179,4 +179,4 @@ spec:
 
 `kubectl apply -f favorite-beer-service.yml`
 
-You should now be able to hit your any of your node ip addresses, on that port, and see the application being served.
+You should now be able to hit any of your node ip addresses, on that port, and see the application being served.
