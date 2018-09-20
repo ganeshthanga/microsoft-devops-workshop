@@ -57,9 +57,14 @@ Once you are onto a worker node, run the following commands to upgrade docker to
 You will need to do this on every node, in your cluster.
 
 ```
-sudo vi /etc/apt/preferences.d/docker.pref
-sudo apt-get update
-sudo apt-get install -y docker-engine
+$ sudo vi /etc/apt/preferences.d/docker.pref
+# Contents of the above file should look like this:
+Package: docker-engine
+Pin: version 17.05.*
+Pin-Priority: 550
+
+$ sudo apt-get update
+$ sudo apt-get install -y docker-engine
 ```
 
 ## Continuing
