@@ -4,7 +4,7 @@ In Kubernetes, we use a special command to create an `ImagePullSecret` that we c
 
 `kubectl create secret docker-registry regcred --docker-server=<your-registry-server> --docker-username=<your-name> --docker-password=<your-pword> --docker-email=<your-email>`
 
-Will automatically create a secret named: `docker-registry` which you could add to `imagePullSecrets` as part of your k8s resource definitions. The contents of this secret is a paramaterized `~/.docker/config.json` file.
+Will automatically create a secret named: `regcred` which you could add to `imagePullSecrets` as part of your k8s resource definitions. The contents of this secret is a paramaterized `~/.docker/config.json` file.
 
 Example deployment with imagePullSecret defined.
 
@@ -31,7 +31,7 @@ spec:
         ports:
         - containerPort: 80
     imagePullSecrets:
-    - name: docker-registry
+    - name: regcred
 ```
 
 This could be applied via kubectl, and will work if the command at the top of this readme is run first.

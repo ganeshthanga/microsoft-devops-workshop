@@ -21,3 +21,17 @@ We have defined a chart in the app code repo, which can be updated with the code
 Discuss resources included, and the templating that is occurring in this iteration.
 
 https://github.com/redapt/favorite-beer/tree/master/spa-react-netcore-redis/voting/voting/k8s
+
+
+From this `k8s` folder in the app source code, with `helm` configured and installed to the cluster:
+
+To use the default values:
+```
+helm upgrade --install beer Chart --set image.tag=v1 --namespace=default
+```
+
+You can target the denver-values using this command:
+```
+helm upgrade --install denver Chart -f denver-values.yaml --set image.tag=v1 --namespace=default
+```
+
