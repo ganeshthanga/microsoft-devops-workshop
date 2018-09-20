@@ -239,4 +239,4 @@ spec:
 
 ## Continuing to Define our Stack
 
-In the next section, we will detup the resources for our favorite-beer  web application.
+In the next section, we will setup the resources for our favorite-beer web application.
