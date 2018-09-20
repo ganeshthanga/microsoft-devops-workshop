@@ -4,8 +4,9 @@ Since redis is a dependency of our app, we should deploy it first. The recommend
 
 We can map our understanding of the docker-compose.yml we developed in our local environment, to our understanding of this primitive in Kubernetes.
 
-docker-compose.alt.yml
 ```
+$ cat docker-compose.alt.yml
+
 version: '3.4'
 
 services:
@@ -34,9 +35,10 @@ volumes:
 ```
 
 
-Our deployment for the `voting`/`redis` container.
-`favorite-beer-redis-statefulset.yml`
+Our deployment for the `voting`/`redis` container:
 ```
+$ cat favorite-beer-redis-statefulset.yml
+
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
@@ -79,12 +81,14 @@ While this implementation could be used, if we are concerned about keeping this 
 
 On minikube, we can experiment with this by creating a host path volume, that we will use for our volume claim.
 
-`minkube ssh`
-
-`mkdir /data/redis-data`
-
-favorite-beer-redis-pv.yml
 ```
+$ minkube ssh
+minikube> mkdir /data/redis-data
+```
+
+```
+$ cat favorite-beer-redis-pv.yml
+
 apiVersion: v1
 kind: PersistentVolume
 metadata:
@@ -109,12 +113,13 @@ spec:
   resources:
     requests:
       storage: 1Gi
+
+$ kubectl apply -f favorite-beer-redis-pv.yml
 ```
 
-`kubectl apply -f favorite-beer-redis-pv.yml`
-
-favorite-beer-redis-statefulset.yml
 ```
+$ cat favorite-beer-redis-statefulset.yml
+
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
@@ -155,9 +160,9 @@ spec:
                 operator: In
                 values:
                   - favorite-beer-redis
-```
 
-`kubectl apply -f favorite-beer-redis-statefulset.yml`
+$ kubectl apply -f favorite-beer-redis-statefulset.yml
+```
 
 Notable Differences:
 
@@ -169,8 +174,9 @@ Notable Differences:
 
 In AKS, we can store out data in a Premium Managed Disk really easily, with Dynamic Provisioning.
 
-favorite-beer-redis-statefulset.yml
 ```
+$ cat favorite-beer-redis-statefulset.yml
+
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
@@ -204,9 +210,9 @@ spec:
       resources:
         requests:
           storage: 1Gi
-```
 
-`kubectl apply -f favorite-beer-redis-statefulset.yml`
+$ kubectl apply -f favorite-beer-redis-statefulset.yml
+```
 
 Notable Differences:
 
@@ -218,8 +224,9 @@ Since this is a service that recieve traffic internally or otherwise over the ne
 
 We can define a service for our stateful set, and in this case we will choose `type: ClusterIP`. Applying this resource to our cluster, will create an internal (To the kubernetes cluster) ip that can be reached via the service name. We don't have any need to access our redis instance, outside of services running on Kubernetes, so no need to go further.
 
-`favorite-beer-redis-service.yml`
 ```
+$ cat favorite-beer-redis-service.yml
+
 apiVersion: v1
 kind: Service
 metadata:
@@ -233,9 +240,9 @@ spec:
     protocol: TCP
     targetPort: 6379
   type: ClusterIP
-```
 
-`kubectl apply -f favorite-beer-redis-service.yml`
+$ kubectl apply -f favorite-beer-redis-service.yml
+```
 
 ## Continuing to Define our Stack
 
