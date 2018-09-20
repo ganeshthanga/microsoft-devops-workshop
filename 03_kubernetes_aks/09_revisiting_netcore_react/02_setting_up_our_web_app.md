@@ -188,4 +188,4 @@ NAME                  TYPE           CLUSTER-IP     EXTERNAL-IP     PORT(S)     
 favorite-beer         LoadBalancer   10.0.47.83     13.64.173.174   80:31650/TCP   26m
 ```
 
-Note LoadBalancer IP (13.64.173.174) Azure assigned to the Azure Load Balancer it attached to your AKS nodes. Put that IP into your browser and you should see the "Favorite Beer" app working.
+Note the LoadBalancer IP (13.64.173.174, in this example) Azure assigned to the Azure Load Balancer it attached to your AKS nodes. Put whichever IP Azure assigned for _your_ Load Balancer into your browser and you should see the "Favorite Beer" app working.
