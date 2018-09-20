@@ -8,7 +8,7 @@ Our application stack includes two microservices.
 1. Our .NET Core app (The image has been publicly staged on docker hub at `redaptcloud/favorite-beer:v1`)
 2. The redis data store.
 
-When deploying to Kubernetes it is important to deploy everyhing at the same time, or dependencies first, of course. We'll setup our redis pods, and then deploy our web app pods.
+When deploying to Kubernetes it is important to deploy everything at the same time, or dependencies first, of course. We'll setup our redis pods, and then deploy our web app pods.
 
 ## Table of Contents
 
